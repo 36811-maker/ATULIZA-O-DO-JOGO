@@ -30,7 +30,17 @@ const POKEMON_DATA = [
     image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
     passiveId: "speed",
     baseMaxHp: 100,
-    stats: { atk: 85, def: 55, spd: 95, hp: 100 }
+    stats: { atk: 85, def: 55, spd: 95, hp: 100 },
+    moves: {
+      quick: { name: "Investida Elétrica ⚡", type: "quick", desc: "Golpe rápido e elétrico" },
+      strong: { name: "Choque do Trovão 💥", type: "strong", desc: "Descarga pesada com 30% de chance de paralisar", status: "paralysis", statusChance: 0.30 },
+      special: { name: "Trovão Cataclísmico ⚡", type: "special", desc: "Poder elétrico colossal com 45% de paralisia", status: "paralysis", statusChance: 0.45 }
+    },
+    personality: {
+      trait: "Elétrico e Ágil",
+      quote: "Pikachu solta faíscas animadas das bochechas!",
+      victory: "Pikachu comemora com uma dança elétrica radiante!"
+    }
   },
   {
     id: 2,
@@ -45,7 +55,17 @@ const POKEMON_DATA = [
     image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png",
     passiveId: "power",
     baseMaxHp: 105,
-    stats: { atk: 92, def: 75, spd: 84, hp: 105 }
+    stats: { atk: 92, def: 75, spd: 84, hp: 105 },
+    moves: {
+      quick: { name: "Garra de Fogo 🔥", type: "quick", desc: "Corte rápido em chamas" },
+      strong: { name: "Lança-Chamas Devastador 💥", type: "strong", desc: "Rajada ardente com 35% de chance de queimadura", status: "burn", statusChance: 0.35 },
+      special: { name: "Explosão de Fogo Apocalíptica 🔥", type: "special", desc: "Incêndio devastador com 50% de queimadura", status: "burn", statusChance: 0.50 }
+    },
+    personality: {
+      trait: "Feroz e Altivo",
+      quote: "Charizard solta uma baforada de fumaça intimidadora!",
+      victory: "Charizard ruge alto em direção ao horizonte em chamas!"
+    }
   },
   {
     id: 3,
@@ -60,7 +80,17 @@ const POKEMON_DATA = [
     image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/150.png",
     passiveId: "special",
     baseMaxHp: 110,
-    stats: { atk: 96, def: 80, spd: 90, hp: 110 }
+    stats: { atk: 96, def: 80, spd: 90, hp: 110 },
+    moves: {
+      quick: { name: "Psico-Corte 🔮", type: "quick", desc: "Lâmina mental veloz" },
+      strong: { name: "Onda Telecinética 💥", type: "strong", desc: "Onda mental de choque com 30% de atordoamento", status: "stun", statusChance: 0.30 },
+      special: { name: "Psico-Explosão Cósmica 🌌", type: "special", desc: "Dano psíquico arrasador com 45% de atordoamento", status: "stun", statusChance: 0.45 }
+    },
+    personality: {
+      trait: "Soberano e Frio",
+      quote: "Mewtwo fita o rival com olhos brilhantes de poder mental.",
+      victory: "Mewtwo desvia o olhar com superioridade telecinética."
+    }
   },
   {
     id: 4,
@@ -75,7 +105,17 @@ const POKEMON_DATA = [
     image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/9.png",
     passiveId: "defense",
     baseMaxHp: 115,
-    stats: { atk: 78, def: 95, spd: 65, hp: 115 }
+    stats: { atk: 78, def: 95, spd: 65, hp: 115 },
+    moves: {
+      quick: { name: "Jato D'Água 💧", type: "quick", desc: "Disparo rápido pressurizado" },
+      strong: { name: "Hidro Bomba Esmagadora 💥", type: "strong", desc: "Canhões duplos de impacto torrencial", status: "stun", statusChance: 0.20 },
+      special: { name: "Tsunami Colossal 🌊", type: "special", desc: "Maré colossal que arrasta o oponente" }
+    },
+    personality: {
+      trait: "Firme e Resoluto",
+      quote: "Blastoise mira seus canhões gêmeos com determinação de aço.",
+      victory: "Blastoise bate no peito celebrando a defesa inabalável!"
+    }
   },
   {
     id: 5,
@@ -90,7 +130,17 @@ const POKEMON_DATA = [
     image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/3.png",
     passiveId: "heal",
     baseMaxHp: 110,
-    stats: { atk: 82, def: 86, spd: 70, hp: 110 }
+    stats: { atk: 82, def: 86, spd: 70, hp: 110 },
+    moves: {
+      quick: { name: "Chicote de Vinha 🌿", type: "quick", desc: "Açoite de vinhas ágil" },
+      strong: { name: "Bomba de Lodo Tóxica 💥", type: "strong", desc: "Lodo tóxico com 35% de chance de envenenar", status: "poison", statusChance: 0.35 },
+      special: { name: "Raio Solar Devastador 🌿", type: "special", desc: "Energia solar concentrada com 45% de envenenamento", status: "poison", statusChance: 0.45 }
+    },
+    personality: {
+      trait: "Sereno e Paciente",
+      quote: "Venusaur absorve a luz do sol através de sua enorme flor.",
+      victory: "Venusaur espalha pólen perfumado em celebração à vida!"
+    }
   },
   {
     id: 6,
@@ -105,7 +155,17 @@ const POKEMON_DATA = [
     image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/94.png",
     passiveId: "crit",
     baseMaxHp: 95,
-    stats: { atk: 90, def: 60, spd: 92, hp: 95 }
+    stats: { atk: 90, def: 60, spd: 92, hp: 95 },
+    moves: {
+      quick: { name: "Lambida Fantasma 👻", type: "quick", desc: "Golpe espectral paralisante com 20% de paralisia", status: "paralysis", statusChance: 0.20 },
+      strong: { name: "Bola Sombria Aterrorizante 💥", type: "strong", desc: "Esfera de sombras concentradas com 30% de veneno", status: "poison", statusChance: 0.30 },
+      special: { name: "Pesadelo Noturno 🌑", type: "special", desc: "Explosão de trevas profunda com 40% de atordoamento", status: "stun", statusChance: 0.40 }
+    },
+    personality: {
+      trait: "Brincalhão e Traiçoeiro",
+      quote: "Gengar solta uma gargalhada sinistra que ecoa pelas sombras!",
+      victory: "Gengar mergulha no chão em meio a risadas zombeteiras!"
+    }
   },
   {
     id: 7,
@@ -120,7 +180,17 @@ const POKEMON_DATA = [
     image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/448.png",
     passiveId: "balanced",
     baseMaxHp: 100,
-    stats: { atk: 88, def: 78, spd: 86, hp: 100 }
+    stats: { atk: 88, def: 78, spd: 86, hp: 100 },
+    moves: {
+      quick: { name: "Palma da Força 🥊", type: "quick", desc: "Golpe marcial veloz com foco de aura" },
+      strong: { name: "Esfera de Aura Implacável 💥", type: "strong", desc: "Esfera que nunca erra o alvo com impacto potente" },
+      special: { name: "Fúria de Combate Fechado 👊", type: "special", desc: "Sequência brutal de socos contínuos devastadores" }
+    },
+    personality: {
+      trait: "Honrado e Disciplinado",
+      quote: "Lucario canaliza sua aura em postura marcial perfeita.",
+      victory: "Lucario curva a cabeça em respeito à batalha travada!"
+    }
   },
   {
     id: 8,
@@ -135,7 +205,517 @@ const POKEMON_DATA = [
     image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/658.png",
     passiveId: "fast",
     baseMaxHp: 100,
-    stats: { atk: 88, def: 67, spd: 98, hp: 100 }
+    stats: { atk: 88, def: 67, spd: 98, hp: 100 },
+    moves: {
+      quick: { name: "Shuriken Ninja 💧", type: "quick", desc: "Lâmina d'água afiada arremessada com maestria" },
+      strong: { name: "Golpe Noturno Veloz 💥", type: "strong", desc: "Corte das sombras profundo com alto impacto" },
+      special: { name: "Mega Hidro Shuriken 🌊", type: "special", desc: "Shuriken colossal que fatia as defesas adversárias" }
+    },
+    personality: {
+      trait: "Silencioso e Focado",
+      quote: "Greninja faz selos com as mãos preparando suas lâminas d'água.",
+      victory: "Greninja cruza os braços como um verdadeiro mestre shinobi!"
+    }
+  },
+  {
+    id: 9,
+    name: "Eevee",
+    type: "Normal",
+    typeClass: "type-normal",
+    badgeIcon: "⭐",
+    description: "Um Pokémon único capaz de se adaptar a qualquer desafio com sua flexibilidade incomparável.",
+    characteristic: "Equilibrado e versátil em combate.",
+    battleStyle: "Versátil Adaptativo",
+    mainAdvantage: "Gera energia rapidamente e equilibra ataque e defesa",
+    image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/133.png",
+    passiveId: "balanced",
+    baseMaxHp: 100,
+    stats: { atk: 80, def: 75, spd: 85, hp: 100 },
+    moves: {
+      quick: { name: "Ataque Rápido ⭐", type: "quick", desc: "Investida veloz e precisa" },
+      strong: { name: "Mordida Feroz 💥", type: "strong", desc: "Mordida potente com 25% de atordoar", status: "stun", statusChance: 0.25 },
+      special: { name: "Impacto Estelar ⭐", type: "special", desc: "Explosão de energia cósmica versátil" }
+    },
+    personality: {
+      trait: "Brincalhão e Determinado",
+      quote: "Eevee olha com determinação e sacode a cauda animado!",
+      victory: "Eevee pula alegremente comemorando a vitória!"
+    }
+  },
+  {
+    id: 10,
+    name: "Snorlax",
+    type: "Normal",
+    typeClass: "type-normal",
+    badgeIcon: "🛡️",
+    description: "Um Pokémon enorme com resistência colossal que absorve os ataques mais violentos sem vacilar.",
+    characteristic: "Vida gigantesca e defesa extrema.",
+    battleStyle: "Tanque Indestrutível",
+    mainAdvantage: "Resistência titânica a danos pesados",
+    image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/143.png",
+    passiveId: "defense",
+    baseMaxHp: 140,
+    stats: { atk: 85, def: 95, spd: 40, hp: 140 },
+    moves: {
+      quick: { name: "Cabeçada Pesada 🛡️", type: "quick", desc: "Golpe frontal maciço" },
+      strong: { name: "Golpe Corporal Esmagador 💥", type: "strong", desc: "Esmaga o oponente com 35% de paralisia", status: "paralysis", statusChance: 0.35 },
+      special: { name: "Hiper Raio Titânico 💥", type: "special", desc: "Disparo devastador de poder avassalador" }
+    },
+    personality: {
+      trait: "Tranquilo e Imperturbável",
+      quote: "Snorlax boceja calmamente, preparando seu peso massivo.",
+      victory: "Snorlax deita no chão satisfeito após a vitória!"
+    }
+  },
+  {
+    id: 11,
+    name: "Dragonite",
+    type: "Dragão / Voador",
+    typeClass: "type-dragao",
+    badgeIcon: "🐉",
+    description: "Um nobre dragão marinho capaz de voar ao redor do globo e desferir rajadas devastadoras.",
+    characteristic: "Poder de fogo e ataques draconianos devastadores.",
+    battleStyle: "Ofensivo Dracônico",
+    mainAdvantage: "Ataques brutais com força bruta de dragão",
+    image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/149.png",
+    passiveId: "power",
+    baseMaxHp: 115,
+    stats: { atk: 98, def: 85, spd: 80, hp: 115 },
+    moves: {
+      quick: { name: "Garra de Dragão 🐉", type: "quick", desc: "Corte dracônico impetuoso" },
+      strong: { name: "Investida do Dragão 💥", type: "strong", desc: "Impacto aéreo furioso com 30% de atordoamento", status: "stun", statusChance: 0.30 },
+      special: { name: "Meteoro do Dragão 🌠", type: "special", desc: "Chuva de meteoros que incinera o campo" }
+    },
+    personality: {
+      trait: "Corajoso e Nobre",
+      quote: "Dragonite ruge com majestade e ergue suas asas douradas!",
+      victory: "Dragonite cruza os céus em celebração heroica!"
+    }
+  },
+  {
+    id: 12,
+    name: "Gyarados",
+    type: "Água / Voador",
+    typeClass: "type-agua",
+    badgeIcon: "🌊",
+    description: "Uma temível serpente marinha com fúria incontrolável capaz de criar maremotos.",
+    characteristic: "Grande fúria ofensiva e ataques torrenciais.",
+    battleStyle: "Fúria Torrencial",
+    mainAdvantage: "Pressão contínua com bônus de dano de água",
+    image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/130.png",
+    passiveId: "power",
+    baseMaxHp: 110,
+    stats: { atk: 96, def: 79, spd: 81, hp: 110 },
+    moves: {
+      quick: { name: "Mordida D'Água 💧", type: "quick", desc: "Presas torrenciais afiadas" },
+      strong: { name: "Cascata Violenta 💥", type: "strong", desc: "Queda d'água devastadora com 30% de atordoamento", status: "stun", statusChance: 0.30 },
+      special: { name: "Fúria do Tsunami 🌊", type: "special", desc: "Maremoto arrasador que varre as defesas" }
+    },
+    personality: {
+      trait: "Feroz e Intimidador",
+      quote: "Gyarados ruge intensamente agitando a arena!",
+      victory: "Gyarados proclama seu domínio sobre o campo de batalha!"
+    }
+  },
+  {
+    id: 13,
+    name: "Arcanine",
+    type: "Fogo",
+    typeClass: "type-fogo",
+    badgeIcon: "🔥",
+    description: "O lendário cão de fogo conhecido pela sua velocidade impetuosa e nobre lealdade.",
+    characteristic: "Ataques rápidos e chamas explosivas.",
+    battleStyle: "Velocista Ardente",
+    mainAdvantage: "Combina velocidade extrema e chamas ardentes",
+    image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/59.png",
+    passiveId: "fast",
+    baseMaxHp: 105,
+    stats: { atk: 92, def: 80, spd: 90, hp: 105 },
+    moves: {
+      quick: { name: "Presa de Fogo 🔥", type: "quick", desc: "Mordida ardente rápida" },
+      strong: { name: "Velocidade Extrema 💥", type: "strong", desc: "Arrancada fulminante com 30% de chance de queimadura", status: "burn", statusChance: 0.30 },
+      special: { name: "Bombardeio de Chamas 🔥", type: "special", desc: "Explosão incandescente total com 50% de queimadura", status: "burn", statusChance: 0.50 }
+    },
+    personality: {
+      trait: "Leal e Destemido",
+      quote: "Arcanine se posiciona com bravura soltando fagulhas!",
+      victory: "Arcanine uiva triunfante com sua nobre crina em chamas!"
+    }
+  },
+  {
+    id: 14,
+    name: "Ampharos",
+    type: "Elétrico",
+    typeClass: "type-eletrico",
+    badgeIcon: "⚡",
+    description: "Sua cauda brilhante emite uma luz visível até do espaço, canalizando eletricidade pura.",
+    characteristic: "Poder especial e descargas de alta voltagem.",
+    battleStyle: "Canhão Elétrico",
+    mainAdvantage: "Ataques especiais de alto impacto com paralisia",
+    image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/181.png",
+    passiveId: "special",
+    baseMaxHp: 105,
+    stats: { atk: 85, def: 85, spd: 70, hp: 105 },
+    moves: {
+      quick: { name: "Raio Polar ⚡", type: "quick", desc: "Disparo elétrico direto" },
+      strong: { name: "Jóia do Trovão 💥", type: "strong", desc: "Descarga concentrada com 35% de paralisia", status: "paralysis", statusChance: 0.35 },
+      special: { name: "Farol Eletromagnético ⚡", type: "special", desc: "Flash estroboscópico com 50% de paralisia", status: "paralysis", statusChance: 0.50 }
+    },
+    personality: {
+      trait: "Radiante e Gentil",
+      quote: "A cauda de Ampharos brilha com intensidade cósmica!",
+      victory: "Ampharos ilumina toda a arena com uma aura radiante!"
+    }
+  },
+  {
+    id: 15,
+    name: "Scizor",
+    type: "Inseto / Aço",
+    typeClass: "type-aco",
+    badgeIcon: "⚙️",
+    description: "Possui pinças de aço tão duras que podem esmagar qualquer blindagem em fração de segundo.",
+    characteristic: "Ataques físicos precisos e carapaça impenetrável.",
+    battleStyle: "Guerreiro de Aço",
+    mainAdvantage: "Ataques rápidos letais e defesa metálica reforçada",
+    image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/212.png",
+    passiveId: "fast",
+    baseMaxHp: 100,
+    stats: { atk: 97, def: 90, spd: 75, hp: 100 },
+    moves: {
+      quick: { name: "Soco de Bala ⚙️", type: "quick", desc: "Punho de aço ultra-rápido" },
+      strong: { name: "Tesoura X Cortante 💥", type: "strong", desc: "Corte em cruz veloz e impiedoso" },
+      special: { name: "Pinça de Aço Implacável ⚙️", type: "special", desc: "Golpe esmagador capaz de partir rochas" }
+    },
+    personality: {
+      trait: "Focado e Calculista",
+      quote: "Scizor bate suas pinças de aço com precisão cirúrgica!",
+      victory: "Scizor embainha suas pinças em sinal de domínio marcial!"
+    }
+  },
+  {
+    id: 16,
+    name: "Gardevoir",
+    type: "Psíquico / Fada",
+    typeClass: "type-fada",
+    badgeIcon: "✨",
+    description: "Capaz de dobrar as dimensões e proteger seu treinador tecendo miragens de luz mágica.",
+    characteristic: "Poder especial e suporte curativo.",
+    battleStyle: "Místico e Suporte",
+    mainAdvantage: "Dano especial místico com chance de cura defensiva",
+    image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/282.png",
+    passiveId: "heal",
+    baseMaxHp: 95,
+    stats: { atk: 94, def: 75, spd: 82, hp: 95 },
+    moves: {
+      quick: { name: "Voz Desarmante ✨", type: "quick", desc: "Melodia mística encantadora" },
+      strong: { name: "Brilho Mágico 💥", type: "strong", desc: "Clarão de fada com 30% de atordoamento", status: "stun", statusChance: 0.30 },
+      special: { name: "Singularidade Psíquica 🌌", type: "special", desc: "Vórtice cósmico de pura energia mágica" }
+    },
+    personality: {
+      trait: "Elegante e Altruísta",
+      quote: "Gardevoir curva-se com graça tecendo uma barreira de luz!",
+      victory: "Gardevoir agradece com uma reverência serena e graciosa!"
+    }
+  },
+  {
+    id: 17,
+    name: "Absol",
+    type: "Sombrio",
+    typeClass: "type-sombrio",
+    badgeIcon: "🌑",
+    description: "Conhecido como o presságio das catástrofes, pressente o perigo com sua foice premonitória.",
+    characteristic: "Chance altíssima de ataques críticos mortais.",
+    battleStyle: "Assassino Premonitório",
+    mainAdvantage: "Taxa de acertos críticos absurdamente alta",
+    image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/359.png",
+    passiveId: "crit",
+    baseMaxHp: 95,
+    stats: { atk: 97, def: 65, spd: 85, hp: 95 },
+    moves: {
+      quick: { name: "Corte das Sombras 🌑", type: "quick", desc: "Foice noturna veloz" },
+      strong: { name: "Lâmina Noturna 💥", type: "strong", desc: "Corte agudo com alta chance de crítico" },
+      special: { name: "Sentença do Destino 🌑", type: "special", desc: "Golpe premonitório com impacto crítico massivo" }
+    },
+    personality: {
+      trait: "Misterioso e Vigilante",
+      quote: "Absol fita os olhos do oponente, prevendo seu destino.",
+      victory: "Absol desaparece na bruma após uma vitória calculada!"
+    }
+  },
+  {
+    id: 18,
+    name: "Tyranitar",
+    type: "Pedra / Sombrio",
+    typeClass: "type-pedra",
+    badgeIcon: "🪨",
+    description: "Um titã com couraça pétrea imune a projéteis convencionais, que derruba montanhas.",
+    characteristic: "Ataque massivo e resistência de rocha.",
+    battleStyle: "Fortaleza Sísmica",
+    mainAdvantage: "Defesa extrema e ataques físicos avassaladores",
+    image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/248.png",
+    passiveId: "power",
+    baseMaxHp: 115,
+    stats: { atk: 98, def: 95, spd: 61, hp: 115 },
+    moves: {
+      quick: { name: "Lançamento de Rocha 🪨", type: "quick", desc: "Pedregulho maciço lançado" },
+      strong: { name: "Triturar Sombrio 💥", type: "strong", desc: "Mordida titânica com 30% de atordoamento", status: "stun", statusChance: 0.30 },
+      special: { name: "Terremoto Devastador 🌋", type: "special", desc: "Fissura colossal na arena que estremece o solo" }
+    },
+    personality: {
+      trait: "Imponente e Implacável",
+      quote: "Tyranitar bate o pé fazendo o solo estremecer!",
+      victory: "Tyranitar ergue os punhos de rocha rugindo aos céus!"
+    }
+  },
+  {
+    id: 19,
+    name: "Metagross",
+    type: "Aço / Psíquico",
+    typeClass: "type-aco",
+    badgeIcon: "⚙️",
+    description: "Possui quatro cérebros interligados por circuitos magnéticos, calculando cada golpe.",
+    characteristic: "Defesa inquebrável e cálculo ofensivo perfeito.",
+    battleStyle: "Computador Tático",
+    mainAdvantage: "Defesa impenetrável e alta precisão de ataque",
+    image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/376.png",
+    passiveId: "defense",
+    baseMaxHp: 110,
+    stats: { atk: 95, def: 98, spd: 70, hp: 110 },
+    moves: {
+      quick: { name: "Punho de Meteoro ⚙️", type: "quick", desc: "Pancada mecânica veloz" },
+      strong: { name: "Cabeçada Zen 💥", type: "strong", desc: "Impacto psíquico sólido com 25% de atordoar", status: "stun", statusChance: 0.25 },
+      special: { name: "Hipercanhão Magnético ⚙️", type: "special", desc: "Descarga magnética concentrada arrasadora" }
+    },
+    personality: {
+      trait: "Calculista e Estratégico",
+      quote: "Metagross calcula todas as trajetórias de combate em milissegundos.",
+      victory: "Metagross emite um sinal de missão cumprida com perfeição!"
+    }
+  },
+  {
+    id: 20,
+    name: "Salamence",
+    type: "Dragão / Voador",
+    typeClass: "type-dragao",
+    badgeIcon: "🐉",
+    description: "Alcançou o sonho de voar através da evolução, incendiando os céus com suas asas em meia-lua.",
+    characteristic: "Ataques aéreos ofensivos e fúria aérea.",
+    battleStyle: "Predador Aéreo",
+    mainAdvantage: "Poder de ataque aéreo amplificado e fúria rápida",
+    image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/373.png",
+    passiveId: "power",
+    baseMaxHp: 110,
+    stats: { atk: 98, def: 80, spd: 90, hp: 110 },
+    moves: {
+      quick: { name: "Asa de Aço 🐉", type: "quick", desc: "Golpe cortante alado" },
+      strong: { name: "Sopro do Dragão 💥", type: "strong", desc: "Baforada mística com 30% de paralisia", status: "paralysis", statusChance: 0.30 },
+      special: { name: "Carga Dracônica Supersônica ✈️", type: "special", desc: "Mergulho aéreo a velocidades supersônicas" }
+    },
+    personality: {
+      trait: "Destemido e Orgulhoso",
+      quote: "Salamence abre suas asas escarlates e plana em rasante!",
+      victory: "Salamence solta um jato de chamas celestes em comemoração!"
+    }
+  },
+  {
+    id: 21,
+    name: "Garchomp",
+    type: "Dragão / Terrestre",
+    typeClass: "type-dragao",
+    badgeIcon: "🦈",
+    description: "Um tubarão terrestre que voa em velocidade supersônica rente ao chão caçando alvos.",
+    characteristic: "Dano extremo e velocidade cortante.",
+    battleStyle: "Ceifador Terrestre",
+    mainAdvantage: "Dano bruto devastador em golpes rápidos e fortes",
+    image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/445.png",
+    passiveId: "power",
+    baseMaxHp: 115,
+    stats: { atk: 99, def: 85, spd: 92, hp: 115 },
+    moves: {
+      quick: { name: "Tiro de Areia 🦈", type: "quick", desc: "Rajada rápida cortante" },
+      strong: { name: "Corte de Dragão 💥", type: "strong", desc: "Lâmina dracônica veloz com alto dano" },
+      special: { name: "Fúria Sísmica Terrestre 🌋", type: "special", desc: "Rasga o chão em velocidade arrasadora" }
+    },
+    personality: {
+      trait: "Agressivo e Confiante",
+      quote: "Garchomp corta o ar com suas barbatanas afiadas!",
+      victory: "Garchomp crava suas garras na terra declarando sua soberania!"
+    }
+  },
+  {
+    id: 22,
+    name: "Sylveon",
+    type: "Fada",
+    typeClass: "type-fada",
+    badgeIcon: "🎀",
+    description: "Suas fitas sensoriais emitem uma aura calmante que neutraliza a hostilidade dos adversários.",
+    characteristic: "Suporte, recuperação moderada e encanto.",
+    battleStyle: "Protetor Fada",
+    mainAdvantage: "Cura constante e controle do ritmo da luta",
+    image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/700.png",
+    passiveId: "heal",
+    baseMaxHp: 105,
+    stats: { atk: 82, def: 85, spd: 78, hp: 105 },
+    moves: {
+      quick: { name: "Beijo Drenante 🎀", type: "quick", desc: "Ataque fada que suga energia" },
+      strong: { name: "Voz Lunar 💥", type: "strong", desc: "Onda sonora doce com 25% de atordoar", status: "stun", statusChance: 0.25 },
+      special: { name: "Explosão de Amor Encantado ✨", type: "special", desc: "Luz mágica radiante com alto poder espiritual" }
+    },
+    personality: {
+      trait: "Carinhoso e Protetor",
+      quote: "Sylveon entrelaça suas fitas e sorri com doçura radiante.",
+      victory: "Sylveon dança graciosamente espalhando corações e estrelas!"
+    }
+  },
+  {
+    id: 23,
+    name: "Decidueye",
+    type: "Planta / Fantasma",
+    typeClass: "type-planta",
+    badgeIcon: "🏹",
+    description: "Um arqueiro espectral que atira flechas de penas em décimos de segundo sem fazer ruído.",
+    characteristic: "Ataques estratégicos de longa distância e furtividade.",
+    battleStyle: "Arqueiro Sombrio",
+    mainAdvantage: "Golpes certeiros de alta precisão que ignoram defesas",
+    image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/724.png",
+    passiveId: "crit",
+    baseMaxHp: 100,
+    stats: { atk: 90, def: 75, spd: 80, hp: 100 },
+    moves: {
+      quick: { name: "Flecha de Folha 🏹", type: "quick", desc: "Disparo veloz de penas afiadas" },
+      strong: { name: "Pontada Espiritual 💥", type: "strong", desc: "Tiro espectral com 30% de atordoar", status: "stun", statusChance: 0.30 },
+      special: { name: "Chuva de Flechas Sombrias 🍃", type: "special", desc: "Voleio de flechas fantasmas certeiras" }
+    },
+    personality: {
+      trait: "Silencioso e Preciso",
+      quote: "Decidueye puxa o capuz e arma o arco de penas no escuro.",
+      victory: "Decidueye se curva nas sombras e desaparece como o vento!"
+    }
+  },
+  {
+    id: 24,
+    name: "Incineroar",
+    type: "Fogo / Sombrio",
+    typeClass: "type-fogo",
+    badgeIcon: "🤼",
+    description: "Um lutador de ringue brutal que canaliza chamas intensas pelo seu cinturão de fogo.",
+    characteristic: "Força bruta e resistência de combate.",
+    battleStyle: "Lutador de Ringue",
+    mainAdvantage: "Golpes pesados com contra-ataques brutais",
+    image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/727.png",
+    passiveId: "power",
+    baseMaxHp: 110,
+    stats: { atk: 96, def: 88, spd: 70, hp: 110 },
+    moves: {
+      quick: { name: "Chute de Fogo 🤼", type: "quick", desc: "Golpe marcial flamejante" },
+      strong: { name: "Lariat Flamejante 💥", type: "strong", desc: "Braço de fogo violento com 30% de queimadura", status: "burn", statusChance: 0.30 },
+      special: { name: "Salto Mortal do Cinturão Ardente 🔥", type: "special", desc: "Pancada aérea devastadora do topo das cordas" }
+    },
+    personality: {
+      trait: "Provocador e Vigoroso",
+      quote: "Incineroar flexiona os músculos e aponta para o rival!",
+      victory: "Incineroar comemora como o campeão indiscutível do ringue!"
+    }
+  },
+  {
+    id: 25,
+    name: "Mimikyu",
+    type: "Fantasma / Fada",
+    typeClass: "type-fantasma",
+    badgeIcon: "🎭",
+    description: "Usa um disfarce para fazer amigos. Sua fantasia absorve o primeiro golpe fatal recebido.",
+    characteristic: "Proteção especial limitada com disfarce misterioso.",
+    battleStyle: "Disfarce Místico",
+    mainAdvantage: "Disfarce protetor que atenua danos perigosos",
+    image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/778.png",
+    passiveId: "defense",
+    baseMaxHp: 95,
+    stats: { atk: 88, def: 85, spd: 86, hp: 95 },
+    moves: {
+      quick: { name: "Arranhão de Sombra 🎭", type: "quick", desc: "Garra rápida saída de baixo do pano" },
+      strong: { name: "Garra Espectral 💥", type: "strong", desc: "Impacto das trevas com 30% de atordoamento", status: "stun", statusChance: 0.30 },
+      special: { name: "Abraço do Disfarce Sombrio 👻", type: "special", desc: "Engole o rival na escuridão sob a fantasia" }
+    },
+    personality: {
+      trait: "Tímido e Querido",
+      quote: "Mimikyu ajeita seu pano com carinho e fita o oponente.",
+      victory: "Mimikyu comemora todo feliz por ter encontrado um amigo de luta!"
+    }
+  },
+  {
+    id: 26,
+    name: "Zeraora",
+    type: "Elétrico",
+    typeClass: "type-eletrico",
+    badgeIcon: "⚡",
+    description: "Rasga os oponentes com garras eletrificadas à velocidade de um relâmpago azul cintilante.",
+    characteristic: "Velocidade extrema e combos elétricos contínuos.",
+    battleStyle: "Relâmpago Veloz",
+    mainAdvantage: "Velocidade inigualável acelerando combos",
+    image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/807.png",
+    passiveId: "speed",
+    baseMaxHp: 95,
+    stats: { atk: 94, def: 70, spd: 100, hp: 95 },
+    moves: {
+      quick: { name: "Garra de Plasma ⚡", type: "quick", desc: "Garras de eletricidade rápida" },
+      strong: { name: "Punho Trovejante 💥", type: "strong", desc: "Soco de alta voltagem com 35% de paralisia", status: "paralysis", statusChance: 0.35 },
+      special: { name: "Tempestade de Plasma Iônico ⚡", type: "special", desc: "Explosão de relâmpagos azuis que estilhaçam o ar" }
+    },
+    personality: {
+      trait: "Elétrico e Audacioso",
+      quote: "Faíscas azuis estalam nas garras de Zeraora em prontidão!",
+      victory: "Zeraora cruza o campo em um flash azul triunfante!"
+    }
+  },
+  {
+    id: 27,
+    name: "Dragapult",
+    type: "Dragão / Fantasma",
+    typeClass: "type-dragao",
+    badgeIcon: "🚀",
+    description: "Dispara seus pequenos Dreepy dos chifres como mísseis supersônicos que atravessam barreiras.",
+    characteristic: "Velocidade inacreditável e ataques especiais furtivos.",
+    battleStyle: "Caça Furtivo",
+    mainAdvantage: "Altíssima velocidade com ataques especiais dracônicos",
+    image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/887.png",
+    passiveId: "speed",
+    baseMaxHp: 98,
+    stats: { atk: 95, def: 75, spd: 100, hp: 98 },
+    moves: {
+      quick: { name: "Disparo Fantasma 🚀", type: "quick", desc: "Projétil espectral veloz" },
+      strong: { name: "Dardos de Dragão 💥", type: "strong", desc: "Mísseis gêmeos velozes e precisos" },
+      special: { name: "Bombardeio Fantasmagórico Dracônico 🌌", type: "special", desc: "Ataque aéreo total vindo de todas as direções" }
+    },
+    personality: {
+      trait: "Ágil e Espectral",
+      quote: "Dragapult flutua velozmente como uma nave espectral futurista.",
+      victory: "Dragapult executa um giro supersônico no céu festejando!"
+    }
+  },
+  {
+    id: 28,
+    name: "Rayquaza",
+    type: "Dragão / Voador",
+    typeClass: "type-dragao",
+    badgeIcon: "👑",
+    description: "O soberano da camada de ozônio que desce dos céus para pacificar conflitos com poder planetário.",
+    characteristic: "Forma lendária de desafio supremo com poder titânico.",
+    battleStyle: "Lorde dos Céus",
+    mainAdvantage: "Poder colossal em todos os tipos de ataque",
+    image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/384.png",
+    passiveId: "special",
+    baseMaxHp: 120,
+    stats: { atk: 100, def: 90, spd: 95, hp: 120 },
+    moves: {
+      quick: { name: "Corte Aéreo Celeste 👑", type: "quick", desc: "Lâmina de ar primordial veloz" },
+      strong: { name: "Pulso do Dragão 💥", type: "strong", desc: "Onda de choque milenar com 35% de atordoar", status: "stun", statusChance: 0.35 },
+      special: { name: "Ascensão dos Dragões Cósmica 🌠", type: "special", desc: "Mergulho supremo que rasga a estratosfera" }
+    },
+    personality: {
+      trait: "Soberano e Majestoso",
+      quote: "Rayquaza desce das estrelas envolto em anéis de energia sagrada!",
+      victory: "Rayquaza solta um rugido que ecoa pelos confins da atmosfera!"
+    }
   }
 ];
 
@@ -361,8 +941,8 @@ const BOSSES_DATA = [
         aura: "",
         dialogue: "Mewtwo analisa sua força com calma calculada...",
         attacks: [
-          { name: "Psico-Corte", type: "quick", damage: [14, 20] },
-          { name: "Onda Telecinética", type: "strong", damage: [22, 30] }
+          { name: "Psico-Corte", type: "quick", damage: [18, 26] },
+          { name: "Onda Telecinética", type: "strong", damage: [30, 42] }
         ]
       },
       {
@@ -374,8 +954,8 @@ const BOSSES_DATA = [
         dialogue: "⚠️ Mewtwo libera energia colossal! Uma barreira psíquica surge e a arena se transforma em uma Usina de Alta Tensão!",
         bonusShield: 25,
         attacks: [
-          { name: "Sobrecarga Psíquica", type: "strong", damage: [26, 36], applyStatus: "paralysis" },
-          { name: "Psico-Explosão", type: "special", damage: [34, 46], applyStatus: "stun" }
+          { name: "Sobrecarga Psíquica", type: "strong", damage: [34, 46], applyStatus: "paralysis" },
+          { name: "Psico-Explosão", type: "special", damage: [44, 58], applyStatus: "stun" }
         ]
       },
       {
@@ -386,8 +966,8 @@ const BOSSES_DATA = [
         aura: "aura-burn",
         dialogue: "🔥 Mewtwo entra em FRENESI CÓSMICO! A arena se torna um Vulcão Apocalíptico e o poder atinge o limite!",
         attacks: [
-          { name: "Cataclismo Estelar", type: "special", damage: [38, 52], applyStatus: "burn" },
-          { name: "Hiper Raio Destruidor", type: "special", damage: [42, 58] }
+          { name: "Cataclismo Estelar", type: "special", damage: [50, 66], applyStatus: "burn" },
+          { name: "Hiper Raio Destruidor", type: "special", damage: [55, 72] }
         ]
       }
     ]
@@ -410,8 +990,8 @@ const BOSSES_DATA = [
         aura: "",
         dialogue: "Charizard ruge ferozmente, cuspindo fagulhas ardentes!",
         attacks: [
-          { name: "Garra de Fogo", type: "quick", damage: [16, 22] },
-          { name: "Lança-Chamas", type: "strong", damage: [24, 32] }
+          { name: "Garra de Fogo", type: "quick", damage: [18, 26] },
+          { name: "Lança-Chamas", type: "strong", damage: [30, 42] }
         ]
       },
       {
@@ -423,8 +1003,8 @@ const BOSSES_DATA = [
         dialogue: "⚠️ Charizard canaliza o fogo das sombras! A arena é envolta no Abismo Espectral!",
         bonusShield: 20,
         attacks: [
-          { name: "Inferno de Sombras", type: "strong", damage: [28, 38], applyStatus: "burn" },
-          { name: "Fúria Dracônica", type: "special", damage: [35, 48] }
+          { name: "Inferno de Sombras", type: "strong", damage: [34, 46], applyStatus: "burn" },
+          { name: "Fúria Dracônica", type: "special", damage: [44, 58] }
         ]
       },
       {
@@ -435,7 +1015,7 @@ const BOSSES_DATA = [
         aura: "aura-burn",
         dialogue: "🔥 Charizard atinge temperatura máxima! Todo golpe é devastador!",
         attacks: [
-          { name: "Apocalipse Flamejante", type: "special", damage: [40, 55], applyStatus: "burn" }
+          { name: "Apocalipse Flamejante", type: "special", damage: [52, 70], applyStatus: "burn" }
         ]
       }
     ]
@@ -574,12 +1154,16 @@ const SoundFX = {
     try {
       this.init();
       if (!this.ctx) return;
+      const volMultiplier = (typeof StorageManager !== "undefined" && StorageManager.data && StorageManager.data.settings && typeof StorageManager.data.settings.volume === "number")
+        ? (StorageManager.data.settings.volume / 100)
+        : 0.8;
+      const finalVol = Math.max(0.001, volume * volMultiplier);
       setTimeout(() => {
         const osc = this.ctx.createOscillator();
         const gain = this.ctx.createGain();
         osc.type = type;
         osc.frequency.setValueAtTime(freq, this.ctx.currentTime);
-        gain.gain.setValueAtTime(volume, this.ctx.currentTime);
+        gain.gain.setValueAtTime(finalVol, this.ctx.currentTime);
         gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + duration);
         osc.connect(gain);
         gain.connect(this.ctx.destination);
@@ -937,6 +1521,13 @@ let playerShieldActive = false;
 let playerPowerBoostUsed = false;
 let playerPowerBoostActive = false;
 
+// Estados Táticos do Adversário (Batalha Justa e Competitiva)
+let enemyShieldUsed = false;
+let enemyShieldActive = false;
+let enemyPowerBoostUsed = false;
+let enemyPowerBoostActive = false;
+let enemyHealUsed = false;
+
 // Estados de Status Ativos
 let playerStatuses = {};
 let enemyStatuses = {};
@@ -967,6 +1558,191 @@ const AdventureState = {
     antidote: 1
   },
   mapNodes: []
+};
+
+// ==========================================
+// 8.5 SISTEMA DE SALVAMENTO & PROGRESSÃO (LOCALSTORAGE)
+// ==========================================
+let currentPokemonFilter = "all";
+let hasEndedCurrentMatch = false;
+let turningMomentTriggered = false;
+
+const StorageManager = {
+  KEY: "POKEMON_BATALHA_SAVE_V2",
+  data: {
+    unlockedIds: [1, 2, 3, 4, 5, 6, 7, 8],
+    winProgress: 0,
+    totalWins: 0,
+    totalBattles: 0,
+    affinity: {},
+    settings: {
+      sound: true,
+      music: true,
+      volume: 80,
+      reducedMotion: false,
+      battleSpeed: 1
+    },
+    dailyQuests: null
+  },
+  init() {
+    try {
+      const raw = localStorage.getItem(this.KEY);
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        if (parsed && typeof parsed === "object") {
+          this.data = { ...this.data, ...parsed };
+        }
+      }
+    } catch (e) {
+      console.warn("Aviso ao ler localStorage:", e);
+    }
+
+    if (!Array.isArray(this.data.unlockedIds)) {
+      this.data.unlockedIds = [1, 2, 3, 4, 5, 6, 7, 8];
+    } else {
+      for (let i = 1; i <= 8; i++) {
+        if (!this.data.unlockedIds.includes(i)) {
+          this.data.unlockedIds.push(i);
+        }
+      }
+    }
+
+    if (typeof this.data.winProgress !== "number") this.data.winProgress = 0;
+    if (typeof this.data.totalWins !== "number") this.data.totalWins = 0;
+    if (typeof this.data.totalBattles !== "number") this.data.totalBattles = 0;
+    if (!this.data.affinity || typeof this.data.affinity !== "object") this.data.affinity = {};
+    if (!this.data.settings) {
+      this.data.settings = { sound: true, music: true, volume: 80, reducedMotion: false, battleSpeed: 1 };
+    }
+
+    this.initDailyQuests();
+    this.applySettingsToApp();
+    this.save();
+  },
+  save() {
+    try {
+      localStorage.setItem(this.KEY, JSON.stringify(this.data));
+    } catch (e) {
+      console.warn("Aviso ao salvar localStorage:", e);
+    }
+  },
+  resetDefaults() {
+    this.data = {
+      unlockedIds: [1, 2, 3, 4, 5, 6, 7, 8],
+      winProgress: 0,
+      totalWins: 0,
+      totalBattles: 0,
+      affinity: {},
+      settings: {
+        sound: true,
+        music: true,
+        volume: 80,
+        reducedMotion: false,
+        battleSpeed: 1
+      },
+      dailyQuests: null
+    };
+    this.initDailyQuests();
+    this.save();
+    this.applySettingsToApp();
+  },
+  isPokemonUnlocked(id) {
+    return this.data.unlockedIds.includes(Number(id));
+  },
+  getWinProgress() {
+    return this.data.winProgress || 0;
+  },
+  getNextLockedPokemon() {
+    return POKEMON_DATA.find(p => !this.data.unlockedIds.includes(p.id)) || null;
+  },
+  recordVictory(hero, damageDealt, critsCount) {
+    this.data.totalWins++;
+    this.data.totalBattles++;
+    if (hero) this.recordAffinity(hero.id, true, damageDealt, critsCount);
+
+    let newlyUnlocked = null;
+    const nextLocked = this.getNextLockedPokemon();
+    if (nextLocked) {
+      this.data.winProgress++;
+      if (this.data.winProgress >= 5) {
+        this.data.winProgress = 0;
+        this.data.unlockedIds.push(nextLocked.id);
+        newlyUnlocked = nextLocked;
+      }
+    } else {
+      this.data.winProgress = 5;
+    }
+
+    this.checkQuestProgress("win", 1);
+    if (critsCount > 0) this.checkQuestProgress("crit", critsCount);
+
+    this.save();
+    return newlyUnlocked;
+  },
+  recordDefeat(hero, damageDealt, critsCount) {
+    this.data.totalBattles++;
+    if (hero) this.recordAffinity(hero.id, false, damageDealt, critsCount);
+    if (critsCount > 0) this.checkQuestProgress("crit", critsCount);
+    this.save();
+  },
+  recordAffinity(pokeId, isWin, damageDealt, critsCount) {
+    if (!this.data.affinity[pokeId]) {
+      this.data.affinity[pokeId] = { battles: 0, wins: 0, losses: 0, damage: 0, crits: 0 };
+    }
+    const aff = this.data.affinity[pokeId];
+    aff.battles++;
+    if (isWin) aff.wins++;
+    else aff.losses++;
+    aff.damage += Math.round(damageDealt || 0);
+    aff.crits += Math.round(critsCount || 0);
+  },
+  getPokemonAffinity(pokeId) {
+    return this.data.affinity[pokeId] || { battles: 0, wins: 0, losses: 0, damage: 0, crits: 0 };
+  },
+  getAffinityTitle(pokeId) {
+    const aff = this.getPokemonAffinity(pokeId);
+    if (aff.wins >= 25) return "Campeão 👑";
+    if (aff.wins >= 15) return "Especialista ⚡";
+    if (aff.wins >= 8) return "Veterano 🎖️";
+    if (aff.wins >= 3) return "Parceiro de Batalha 🤝";
+    return "Recruta de Batalha";
+  },
+  initDailyQuests() {
+    const today = new Date().toISOString().slice(0, 10);
+    if (!this.data.dailyQuests || this.data.dailyQuests.date !== today) {
+      this.data.dailyQuests = {
+        date: today,
+        quests: [
+          { id: "win_2", type: "win", title: "Vitória Implacável", desc: "Vença 2 batalhas em qualquer modo", target: 2, current: 0, completed: false, reward: "🪙 +50 Moedas" },
+          { id: "crit_2", type: "crit", title: "Impacto Crítico", desc: "Desfira 2 ataques críticos durante combates", target: 2, current: 0, completed: false, reward: "✨ Título Especial" },
+          { id: "type_1", type: "type", title: "Mestre Elemental", desc: "Acerte golpe com vantagem de tipo super eficaz", target: 1, current: 0, completed: false, reward: "⚡ +30 EP Inicial" }
+        ]
+      };
+    }
+  },
+  checkQuestProgress(type, amount = 1) {
+    if (!this.data.dailyQuests || !this.data.dailyQuests.quests) return;
+    this.data.dailyQuests.quests.forEach(q => {
+      if (q.type === type && !q.completed) {
+        q.current = Math.min(q.target, q.current + amount);
+        if (q.current >= q.target) {
+          q.completed = true;
+        }
+      }
+    });
+    this.save();
+  },
+  applySettingsToApp() {
+    const st = this.data.settings;
+    if (st) {
+      SoundFX.enabled = !!st.sound;
+      MusicEngine.enabled = !!st.music;
+      if (document.body) {
+        if (st.reducedMotion) document.body.classList.add("reduced-motion");
+        else document.body.classList.remove("reduced-motion");
+      }
+    }
+  }
 };
 
 // ==========================================
@@ -1192,16 +1968,74 @@ const DOM = {
   btnPowerBoost: document.getElementById("btn-power-boost"),
   badgeHealStatus: document.getElementById("badge-heal-status"),
   badgeShieldStatus: document.getElementById("badge-shield-status"),
-  badgePowerStatus: document.getElementById("badge-power-status")
+  badgePowerStatus: document.getElementById("badge-power-status"),
+
+  // Progresso de Vitórias e Desbloqueio (Requisito 9)
+  unlockProgressBar: document.getElementById("unlock-progress-bar"),
+  unlockProgressText: document.getElementById("unlock-progress-text"),
+  unlockNextTarget: document.getElementById("unlock-next-target"),
+
+  // Filtros de Pokémon (Requisito 11)
+  pokemonFiltersBar: document.getElementById("pokemon-filters-bar"),
+
+  // Modal de Desbloqueio (Comemoração)
+  unlockModal: document.getElementById("unlock-modal"),
+  unlockPokeImg: document.getElementById("unlock-poke-img"),
+  unlockPokeName: document.getElementById("unlock-poke-name"),
+  unlockPokeType: document.getElementById("unlock-poke-type"),
+  unlockPokeDesc: document.getElementById("unlock-poke-desc"),
+  unlockPokeCharacteristic: document.getElementById("unlock-poke-characteristic"),
+  btnCloseUnlock: document.getElementById("btn-close-unlock"),
+
+  // Modal de Configurações e Acessibilidade (Requisito 5)
+  btnOpenSettings: document.getElementById("btn-open-settings"),
+  settingsModal: document.getElementById("settings-modal"),
+  btnCloseSettings: document.getElementById("btn-close-settings"),
+  btnSettingMusic: document.getElementById("btn-setting-music"),
+  btnSettingSound: document.getElementById("btn-setting-sound"),
+  settingVolumeSlider: document.getElementById("setting-volume-slider"),
+  settingVolumeVal: document.getElementById("setting-volume-val"),
+  btnSettingMotion: document.getElementById("btn-setting-motion"),
+  btnSettingSpeed: document.getElementById("btn-setting-speed"),
+  btnSettingReset: document.getElementById("btn-setting-reset"),
+
+  // Modal de Desafios Diários (Requisito 8)
+  btnOpenQuests: document.getElementById("btn-open-quests"),
+  questsModal: document.getElementById("quests-modal"),
+  btnCloseQuests: document.getElementById("btn-close-quests"),
+  questsDateSubtitle: document.getElementById("quests-date-subtitle"),
+  questsList: document.getElementById("quests-list"),
+
+  // Modal de Narrativa da Aventura (Requisito 6)
+  storyModal: document.getElementById("story-modal"),
+  storyModalIcon: document.getElementById("story-modal-icon"),
+  storyModalTitle: document.getElementById("story-modal-title"),
+  storyModalText: document.getElementById("story-modal-text"),
+  storyModalObjective: document.getElementById("story-modal-objective"),
+  btnContinueStory: document.getElementById("btn-continue-story"),
+
+  // Alerta de Momento de Virada (Requisito 7)
+  turningMomentAlert: document.getElementById("turning-moment-alert"),
+  turningMomentText: document.getElementById("turning-moment-text"),
+
+  // Afinidade e Personalidade no Modal Info (Requisitos 3 & 7)
+  infoPersonalityTag: document.getElementById("info-personality-tag"),
+  infoAffinityTitle: document.getElementById("info-affinity-title"),
+  infoAffinityBattles: document.getElementById("info-affinity-battles"),
+  infoAffinityWins: document.getElementById("info-affinity-wins"),
+  infoAffinityDamage: document.getElementById("info-affinity-damage"),
+  infoAffinityCrits: document.getElementById("info-affinity-crits")
 };
 
 // ==========================================
 // 10. INICIALIZAÇÃO DA APLICAÇÃO
 // ==========================================
 function initApp() {
+  StorageManager.init();
   hideAllModals();
   showScreen("selection");
   renderPokemonSelection();
+  updateUnlockProgressBar();
   setupEventListeners();
   updateArenaTheme("forest");
 }
@@ -1212,7 +2046,14 @@ function hideAllModals() {
     DOM.shopModal,
     DOM.eventModal,
     DOM.restModal,
-    DOM.arenaInfoModal
+    DOM.arenaInfoModal,
+    DOM.unlockModal,
+    DOM.settingsModal,
+    DOM.questsModal,
+    DOM.storyModal,
+    DOM.pokemonInfoModal,
+    DOM.replayModal,
+    DOM.adventureVictoryModal
   ];
   modals.forEach(modal => {
     if (modal) {
@@ -1243,26 +2084,37 @@ function showScreen(screenName) {
 }
 
 // ==========================================
-// 11. RENDERIZAÇÃO DOS CARDS DE POKÉMON (Melhorias 4 & 5)
+// 11. RENDERIZAÇÃO DOS CARDS DE POKÉMON E FILTROS (Melhorias 4, 5, 9, 10, 11)
 // ==========================================
 function renderPokemonSelection() {
   DOM.pokemonGrid.innerHTML = "";
 
-  POKEMON_DATA.forEach(poke => {
+  const filter = (currentPokemonFilter || "all").toLowerCase();
+  const listToRender = POKEMON_DATA.filter(p => {
+    if (filter === "all") return true;
+    return p.type.toLowerCase().includes(filter) || p.typeClass.toLowerCase().includes(filter);
+  });
+
+  const winProg = StorageManager.getWinProgress();
+  const winsNeeded = 5 - winProg;
+
+  listToRender.forEach(poke => {
+    const isUnlocked = StorageManager.isPokemonUnlocked(poke.id);
     const cardWrapper = document.createElement("div");
     cardWrapper.className = "pokemon-card-wrapper";
 
     const card = document.createElement("div");
-    card.className = "pokemon-card";
+    card.className = `pokemon-card ${!isUnlocked ? "card-locked" : ""}`;
     card.dataset.id = poke.id;
 
     card.innerHTML = `
       <div class="card-shine"></div>
       <div class="card-header">
         <span class="type-badge ${poke.typeClass}">${poke.badgeIcon} ${poke.type}</span>
+        ${!isUnlocked ? `<span class="card-lock-badge">🔒 Bloqueado (${winProg}/5 Vitórias)</span>` : ""}
       </div>
       <div class="card-img-wrapper">
-        <img class="pokemon-card-img" src="${poke.image}" alt="${poke.name}" loading="lazy">
+        <img class="pokemon-card-img ${!isUnlocked ? "silhouette" : ""}" src="${poke.image}" alt="${poke.name}" loading="lazy">
       </div>
       <h3 class="card-name">${poke.name}</h3>
       <p class="card-desc">${poke.description}</p>
@@ -1297,7 +2149,10 @@ function renderPokemonSelection() {
       </div>
 
       <div class="card-actions-row">
-        <button class="btn-choose" data-action="choose">Escolher</button>
+        ${isUnlocked
+          ? `<button class="btn-choose" data-action="choose">Escolher</button>`
+          : `<button class="btn-choose" disabled style="opacity: 0.6; cursor: not-allowed;">🔒 Bloqueado</button>`
+        }
         <button class="btn-card-info" data-action="info" title="Ver Informações Detalhadas">ℹ️</button>
       </div>
     `;
@@ -1307,14 +2162,16 @@ function renderPokemonSelection() {
     const chooseBtn = card.querySelector(".btn-choose");
     const infoBtn = card.querySelector(".btn-card-info");
 
-    chooseBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      SoundFX.buttonClick();
-      card.style.transform = "scale(0.96)";
-      setTimeout(() => {
-        onSelectPokemonForMode(poke);
-      }, 150);
-    });
+    if (chooseBtn && isUnlocked) {
+      chooseBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        SoundFX.buttonClick();
+        card.style.transform = "scale(0.96)";
+        setTimeout(() => {
+          onSelectPokemonForMode(poke);
+        }, 150);
+      });
+    }
 
     infoBtn.addEventListener("click", (e) => {
       e.stopPropagation();
@@ -1323,6 +2180,11 @@ function renderPokemonSelection() {
     });
 
     card.addEventListener("click", () => {
+      if (!isUnlocked) {
+        SoundFX.buttonClick();
+        showFloatingText(card, `🔒 Faltam ${winsNeeded} vitórias para liberar!`, "crit");
+        return;
+      }
       SoundFX.buttonClick();
       onSelectPokemonForMode(poke);
     });
@@ -1330,6 +2192,143 @@ function renderPokemonSelection() {
     cardWrapper.appendChild(card);
     DOM.pokemonGrid.appendChild(cardWrapper);
   });
+}
+
+function updateUnlockProgressBar() {
+  if (!DOM.unlockProgressBar || !DOM.unlockProgressText) return;
+  const nextTarget = StorageManager.getNextLockedPokemon();
+  const unlockedCount = StorageManager.data.unlockedIds.length;
+  const totalCount = POKEMON_DATA.length;
+
+  if (!nextTarget) {
+    DOM.unlockProgressBar.style.width = "100%";
+    DOM.unlockProgressText.textContent = `Todos os ${totalCount} Pokémon Desbloqueados! 🎉`;
+    if (DOM.unlockNextTarget) DOM.unlockNextTarget.textContent = "🏆 Coleção Completa!";
+    return;
+  }
+
+  const progress = StorageManager.getWinProgress();
+  const pct = (progress / 5) * 100;
+  DOM.unlockProgressBar.style.width = `${pct}%`;
+  DOM.unlockProgressText.textContent = `Vitórias para próximo Pokémon: ${progress} / 5`;
+  if (DOM.unlockNextTarget) {
+    DOM.unlockNextTarget.textContent = `Próximo: ${nextTarget.name} (${unlockedCount}/${totalCount})`;
+  }
+}
+
+function openUnlockCelebrationModal(pokemon) {
+  if (!pokemon || !DOM.unlockModal) return;
+  DOM.unlockPokeImg.src = pokemon.image;
+  DOM.unlockPokeImg.alt = pokemon.name;
+  DOM.unlockPokeName.textContent = pokemon.name;
+  DOM.unlockPokeType.className = `type-badge ${pokemon.typeClass}`;
+  DOM.unlockPokeType.innerHTML = `${pokemon.badgeIcon} ${pokemon.type}`;
+  DOM.unlockPokeDesc.textContent = pokemon.description;
+  if (DOM.unlockPokeCharacteristic) {
+    DOM.unlockPokeCharacteristic.innerHTML = `<strong>Característica:</strong> ${pokemon.characteristic}`;
+  }
+
+  SoundFX.special();
+  DOM.unlockModal.classList.remove("hidden");
+  DOM.unlockModal.style.display = "flex";
+}
+
+function closeUnlockCelebrationModal() {
+  if (DOM.unlockModal) {
+    DOM.unlockModal.classList.add("hidden");
+    DOM.unlockModal.style.display = "none";
+  }
+}
+
+function openSettingsModal() {
+  if (!DOM.settingsModal) return;
+  const st = StorageManager.data.settings;
+
+  if (DOM.btnSettingMusic) {
+    DOM.btnSettingMusic.textContent = st.music ? "Música: ON" : "Música: OFF";
+    DOM.btnSettingMusic.classList.toggle("active", st.music);
+  }
+  if (DOM.btnSettingSound) {
+    DOM.btnSettingSound.textContent = st.sound ? "Sons: ON" : "Sons: OFF";
+    DOM.btnSettingSound.classList.toggle("active", st.sound);
+  }
+  if (DOM.settingVolumeSlider) {
+    DOM.settingVolumeSlider.value = st.volume || 80;
+    if (DOM.settingVolumeVal) DOM.settingVolumeVal.textContent = `${st.volume || 80}%`;
+  }
+  if (DOM.btnSettingMotion) {
+    DOM.btnSettingMotion.textContent = st.reducedMotion ? "Efeitos: Reduzidos" : "Efeitos: Normais";
+    DOM.btnSettingMotion.classList.toggle("active", st.reducedMotion);
+  }
+  if (DOM.btnSettingSpeed) {
+    DOM.btnSettingSpeed.textContent = st.battleSpeed === 1.5 ? "Velocidade: Rápida (1.5x)" : "Velocidade: Normal";
+    DOM.btnSettingSpeed.classList.toggle("active", st.battleSpeed === 1.5);
+  }
+
+  DOM.settingsModal.classList.remove("hidden");
+  DOM.settingsModal.style.display = "flex";
+}
+
+function closeSettingsModal() {
+  if (DOM.settingsModal) {
+    DOM.settingsModal.classList.add("hidden");
+    DOM.settingsModal.style.display = "none";
+  }
+}
+
+function openQuestsModal() {
+  if (!DOM.questsModal) return;
+  StorageManager.initDailyQuests();
+  const qData = StorageManager.data.dailyQuests;
+
+  if (DOM.questsDateSubtitle) {
+    DOM.questsDateSubtitle.textContent = `Desafios de Hoje (${qData.date}) • Conclua para ganhar recompensas!`;
+  }
+
+  if (DOM.questsList) {
+    DOM.questsList.innerHTML = "";
+    qData.quests.forEach(q => {
+      const qCard = document.createElement("div");
+      qCard.className = `quest-card ${q.completed ? "completed" : ""}`;
+      const pct = Math.min(100, Math.round((q.current / q.target) * 100));
+
+      qCard.innerHTML = `
+        <div class="quest-header">
+          <span class="quest-title">${q.title}</span>
+          <span class="quest-status">${q.completed ? "✓ Concluído!" : `${q.current}/${q.target}`}</span>
+        </div>
+        <p class="quest-desc">${q.desc}</p>
+        <div class="quest-progress-track">
+          <div class="quest-progress-fill" style="width: ${pct}%;"></div>
+        </div>
+        <div class="quest-reward-tag">Recompensa: ${q.reward}</div>
+      `;
+      DOM.questsList.appendChild(qCard);
+    });
+  }
+
+  DOM.questsModal.classList.remove("hidden");
+  DOM.questsModal.style.display = "flex";
+}
+
+function closeQuestsModal() {
+  if (DOM.questsModal) {
+    DOM.questsModal.classList.add("hidden");
+    DOM.questsModal.style.display = "none";
+  }
+}
+
+function triggerTurningMoment(text) {
+  if (!DOM.turningMomentAlert || !DOM.turningMomentText) return;
+  DOM.turningMomentText.textContent = text;
+  DOM.turningMomentAlert.classList.remove("hidden");
+  DOM.turningMomentAlert.classList.remove("active");
+  void DOM.turningMomentAlert.offsetWidth;
+  DOM.turningMomentAlert.classList.add("active");
+  SoundFX.special();
+  setTimeout(() => {
+    if (DOM.turningMomentAlert) DOM.turningMomentAlert.classList.remove("active");
+  }, 3500);
 }
 
 function openPokemonInfoModal(poke) {
@@ -1354,10 +2353,35 @@ function openPokemonInfoModal(poke) {
   DOM.infoStatHp.style.width = `${Math.min(100, poke.stats.hp)}%`;
   DOM.infoValHp.textContent = poke.stats.hp;
 
-  DOM.btnSelectFromInfo.onclick = () => {
-    closePokemonInfoModal();
-    onSelectPokemonForMode(poke);
-  };
+  // Personalidade do Pokémon
+  if (DOM.infoPersonalityTag) {
+    const trait = poke.personality ? poke.personality.trait : "Determinado";
+    DOM.infoPersonalityTag.textContent = `🎭 Personalidade: ${trait}`;
+  }
+
+  // Afinidade com o Pokémon (Requisito 3)
+  const aff = StorageManager.getPokemonAffinity(poke.id);
+  const title = StorageManager.getAffinityTitle(poke.id);
+  if (DOM.infoAffinityTitle) DOM.infoAffinityTitle.textContent = title;
+  if (DOM.infoAffinityBattles) DOM.infoAffinityBattles.textContent = aff.battles || 0;
+  if (DOM.infoAffinityWins) DOM.infoAffinityWins.textContent = aff.wins || 0;
+  if (DOM.infoAffinityDamage) DOM.infoAffinityDamage.textContent = aff.damage || 0;
+  if (DOM.infoAffinityCrits) DOM.infoAffinityCrits.textContent = aff.crits || 0;
+
+  const isUnlocked = StorageManager.isPokemonUnlocked(poke.id);
+  if (DOM.btnSelectFromInfo) {
+    if (!isUnlocked) {
+      DOM.btnSelectFromInfo.disabled = true;
+      DOM.btnSelectFromInfo.textContent = "🔒 Pokémon Bloqueado";
+    } else {
+      DOM.btnSelectFromInfo.disabled = false;
+      DOM.btnSelectFromInfo.textContent = "⚡ Escolher Este Pokémon";
+      DOM.btnSelectFromInfo.onclick = () => {
+        closePokemonInfoModal();
+        onSelectPokemonForMode(poke);
+      };
+    }
+  }
 
   DOM.pokemonInfoModal.classList.remove("hidden");
   DOM.pokemonInfoModal.style.display = "flex";
@@ -1580,6 +2604,13 @@ function getTypeAdvantage(attackerType, defenderType) {
   const isAttElec = attackerType.includes("Elétrico");
   const isAttPsych = attackerType.includes("Psíquico");
   const isAttGhost = attackerType.includes("Fantasma");
+  const isAttFight = attackerType.includes("Lutador");
+  const isAttDragon = attackerType.includes("Dragão");
+  const isAttFairy = attackerType.includes("Fada");
+  const isAttDark = attackerType.includes("Sombrio");
+  const isAttSteel = attackerType.includes("Aço");
+  const isAttRock = attackerType.includes("Pedra") || attackerType.includes("Terrestre");
+  const isAttBug = attackerType.includes("Inseto");
 
   const isDefWater = defenderType.includes("Água");
   const isDefFire = defenderType.includes("Fogo");
@@ -1587,20 +2618,42 @@ function getTypeAdvantage(attackerType, defenderType) {
   const isDefElec = defenderType.includes("Elétrico");
   const isDefPsych = defenderType.includes("Psíquico");
   const isDefGhost = defenderType.includes("Fantasma");
+  const isDefFight = defenderType.includes("Lutador");
+  const isDefDragon = defenderType.includes("Dragão");
+  const isDefFairy = defenderType.includes("Fada");
+  const isDefDark = defenderType.includes("Sombrio");
+  const isDefSteel = defenderType.includes("Aço");
+  const isDefRock = defenderType.includes("Pedra") || defenderType.includes("Terrestre");
+  const isDefBug = defenderType.includes("Inseto");
+  const isDefNormal = defenderType.includes("Normal");
 
   // Vantagens Super Eficazes
-  if (isAttWater && isDefFire) return "super";
-  if (isAttFire && isDefGrass) return "super";
-  if (isAttGrass && isDefWater) return "super";
+  if (isAttWater && (isDefFire || isDefRock)) return "super";
+  if (isAttFire && (isDefGrass || isDefSteel || isDefBug)) return "super";
+  if (isAttGrass && (isDefWater || isDefRock)) return "super";
   if (isAttElec && isDefWater) return "super";
-  if (isAttGhost && isDefPsych) return "super";
+  if (isAttGhost && (isDefPsych || isDefGhost)) return "super";
+  if (isAttPsych && (isDefFight || defenderType.includes("Veneno"))) return "super";
+  if (isAttFight && (isDefNormal || isDefRock || isDefSteel || isDefDark)) return "super";
+  if (isAttDragon && isDefDragon) return "super";
+  if (isAttFairy && (isDefDragon || isDefDark || isDefFight)) return "super";
+  if (isAttDark && (isDefPsych || isDefGhost)) return "super";
+  if (isAttSteel && (isDefFairy || isDefRock)) return "super";
+  if (isAttRock && (isDefFire || isDefElec || isDefBug)) return "super";
+  if (isAttBug && (isDefGrass || isDefPsych || isDefDark)) return "super";
 
   // Desvantagens Pouco Eficazes
-  if (isAttWater && isDefGrass) return "weak";
-  if (isAttFire && isDefWater) return "weak";
-  if (isAttGrass && isDefFire) return "weak";
-  if (isAttElec && isDefGrass) return "weak";
-  if (isAttPsych && isDefGhost) return "weak";
+  if (isAttWater && (isDefGrass || isDefDragon)) return "weak";
+  if (isAttFire && (isDefWater || isDefRock || isDefDragon)) return "weak";
+  if (isAttGrass && (isDefFire || isDefBug || isDefSteel || isDefDragon)) return "weak";
+  if (isAttElec && (isDefGrass || isDefDragon || isDefRock)) return "weak";
+  if (isAttPsych && (isDefSteel || isDefPsych)) return "weak";
+  if (isAttFight && (isDefPsych || isDefFairy || isDefBug)) return "weak";
+  if (isAttDragon && isDefSteel) return "weak";
+  if (isAttDragon && isDefFairy) return "weak";
+  if (isAttDark && (isDefFight || isDefDark || isDefFairy)) return "weak";
+  if (isAttSteel && (isDefFire || isDefWater || isDefElec || isDefSteel)) return "weak";
+  if (isAttGhost && isDefNormal) return "weak";
 
   return "neutral";
 }
@@ -1839,7 +2892,10 @@ function initBattleCombatants(hero, rival, isBoss = false) {
   enemyHP = enemyMaxHP;
 
   playerEP = currentMode === "adventure" ? AdventureState.startEnergy : 30;
-  enemyEP = 20;
+  enemyEP = 35; // Adversário começa com energia competitiva (35 EP)
+
+  hasEndedCurrentMatch = false;
+  turningMomentTriggered = false;
 
   playerCombo = 0;
   maxComboStreak = 0;
@@ -1851,6 +2907,13 @@ function initBattleCombatants(hero, rival, isBoss = false) {
 
   bossShieldUsed = false;
   bossHealUsed = false;
+
+  // Reseta Táticas do Adversário
+  enemyShieldUsed = false;
+  enemyShieldActive = false;
+  enemyPowerBoostUsed = false;
+  enemyPowerBoostActive = false;
+  enemyHealUsed = false;
 
   playerStatuses = {};
   enemyStatuses = {};
@@ -1875,6 +2938,23 @@ function initBattleCombatants(hero, rival, isBoss = false) {
   if (DOM.badgePowerStatus) DOM.badgePowerStatus.textContent = "1x";
   if (DOM.playerSpriteWrapper) {
     DOM.playerSpriteWrapper.classList.remove("shield-active", "power-boost-active");
+  }
+  if (DOM.enemySpriteWrapper) {
+    DOM.enemySpriteWrapper.classList.remove("shield-active", "power-boost-active");
+  }
+
+  // Atualiza botões com os nomes dos golpes exclusivos do Pokémon
+  if (DOM.btnQuick) {
+    const qName = DOM.btnQuick.querySelector(".attack-name");
+    if (qName) qName.textContent = getAttackName("quick", hero);
+  }
+  if (DOM.btnStrong) {
+    const sName = DOM.btnStrong.querySelector(".attack-name");
+    if (sName) sName.textContent = getAttackName("strong", hero);
+  }
+  if (DOM.btnSpecial) {
+    const spName = DOM.btnSpecial.querySelector(".attack-name");
+    if (spName) spName.textContent = getAttackName("special", hero);
   }
 
   // Barra exclusiva do Modo Treino (Requisito 10)
@@ -1914,6 +2994,14 @@ function initBattleCombatants(hero, rival, isBoss = false) {
   addLogMessage(`⚡ Início de combate! ${hero.name} entra no campo da ${currentArena.name}!`, "log-system");
   addLogMessage(`🏟️ Efeito da Arena: ${currentArena.effectText}`, "log-special");
   addLogMessage(`🌦️ Clima Atual: ${currentWeather.name} - ${currentWeather.desc}`, "log-special");
+
+  // Expressões e Citações de Personalidade (Requisito 7)
+  if (hero.personality && hero.personality.quote) {
+    addLogMessage(`💬 ${hero.name}: "${hero.personality.quote}"`, "log-player");
+  }
+  if (!isBoss && rival.personality && rival.personality.quote) {
+    addLogMessage(`💬 ${rival.name}: "${rival.personality.quote}"`, "log-enemy");
+  }
 
   if (isBoss) {
     DOM.bossPhaseBadge.classList.remove("hidden");
@@ -2193,8 +3281,21 @@ function handlePlayerAttack(attackType) {
       addLogMessage("⚡ O poder temporário foi descarregado neste golpe!", "log-special");
     }
 
-    // Aplica no adversário
-    enemyHP = Math.max(0, enemyHP - damageCalc.finalDamage);
+    // Aplica no adversário (considerando Barreira Protetora se ativa)
+    let finalDmgToEnemy = damageCalc.finalDamage;
+    if (enemyShieldActive && finalDmgToEnemy > 0) {
+      finalDmgToEnemy = Math.max(1, Math.round(finalDmgToEnemy * 0.50));
+      enemyShieldActive = false;
+      if (DOM.enemySpriteWrapper) DOM.enemySpriteWrapper.classList.remove("shield-active");
+      addLogMessage(`🛡️ A barreira protetora de ${enemyPokemon.name} absorveu metade do impacto sofrido!`, "log-enemy");
+      showFloatingText(DOM.enemyDamageContainer, "BARREIRA ABSORVEU! 🛡️", "crit");
+    }
+
+    enemyHP = Math.max(0, enemyHP - finalDmgToEnemy);
+
+    // Adrenalina / Contra-golpe: Adversário acumula energia ao ser atingido para poder revidar!
+    CombatSystem.gainEnergy("enemy", 12);
+
     SoundFX.hit();
 
     // Partículas de Impacto Elemental (Melhoria 2)
@@ -2212,13 +3313,14 @@ function handlePlayerAttack(attackType) {
 
     showFloatingText(
       DOM.enemyDamageContainer,
-      `-${damageCalc.finalDamage} HP`,
+      `-${finalDmgToEnemy} HP`,
       damageCalc.isCrit ? "crit" : "normal"
     );
 
     updateHPBar("enemy", enemyHP, enemyMaxHP);
 
-    let logMsg = `⚔️ ${playerPokemon.name} desferiu ${getAttackName(attackType)} e causou ${damageCalc.finalDamage} de dano!`;
+    const playerMoveName = getAttackName(attackType, playerPokemon);
+    let logMsg = `⚔️ ${playerPokemon.name} desferiu ${playerMoveName} e causou ${finalDmgToEnemy} de dano!`;
     if (damageCalc.isCrit) logMsg += " 💥 Ataque crítico!";
     if (damageCalc.comboMultiplier > 1) logMsg += ` (Combo +${Math.round((damageCalc.comboMultiplier - 1) * 100)}%)`;
     addLogMessage(logMsg, "log-player");
@@ -2226,6 +3328,7 @@ function handlePlayerAttack(attackType) {
     // Mensagens de Vantagem / Desvantagem Elemental (Melhoria 1)
     if (damageCalc.typeAdvantage === "super") {
       typeAdvantagesUsed++;
+      StorageManager.checkQuestProgress("type", 1);
       addLogMessage("✨ É super eficaz! Vantagem elemental causou dano adicional!", "log-special");
       showFloatingText(DOM.enemyDamageContainer, "SUPER EFICAZ! ✨", "heal");
     } else if (damageCalc.typeAdvantage === "weak") {
@@ -2234,6 +3337,7 @@ function handlePlayerAttack(attackType) {
 
     // Mensagem destacada de Ataque Crítico (Melhoria 5)
     if (damageCalc.isCrit) {
+      StorageManager.checkQuestProgress("crit", 1);
       addLogMessage("💥 Ataque crítico!", "log-special");
     }
 
@@ -2303,7 +3407,7 @@ function endPlayerTurnPhase() {
 }
 
 // ==========================================
-// 18. IA ESTRATÉGICA DO CHEFE E TURNO ADVERSÁRIO (Melhorias 15 e 16)
+// 18. IA ESTRATÉGICA DO CHEFE E TURNO ADVERSÁRIO (Batalha Justa e Desafiadora)
 // ==========================================
 function decideBossAction() {
   const phaseCfg = activeBossConfig.phases[currentBossPhase - 1] || activeBossConfig.phases[0];
@@ -2312,48 +3416,153 @@ function decideBossAction() {
   const bossHpPct = (enemyHP / enemyMaxHP) * 100;
   const playerHpPct = (playerHP / currentMaxHP) * 100;
 
-  // 1. Tática Defensiva/Recuperação: Se o Chefe estiver com HP crítico (<= 35%) e não usou a proteção
-  if (bossHpPct <= 35 && !bossShieldUsed && Math.random() < 0.65) {
+  // 1. Tática Defensiva/Recuperação: Se o Chefe estiver com HP crítico (<= 40%) e não usou a proteção
+  if (bossHpPct <= 40 && !bossShieldUsed && Math.random() < 0.70) {
     bossShieldUsed = true;
-    CombatSystem.applyStatus("enemy", "regen", 2);
-    addLogMessage(`🛡️ ESTRATÉGIA DO CHEFE: ${activeBossConfig.name} percebeu seu HP baixo e ativou um Escudo de Regeneração Cósmica!`, "log-enemy");
+    enemyShieldActive = true;
+    if (DOM.enemySpriteWrapper) DOM.enemySpriteWrapper.classList.add("shield-active");
+    CombatSystem.applyStatus("enemy", "regen", 3);
+    addLogMessage(`🛡️ ESTRATÉGIA DO CHEFE: ${activeBossConfig.name} ativou uma Barreira Cósmica e Regeneração contínua!`, "log-enemy");
     SoundFX.defend();
+    showFloatingText(DOM.enemyDamageContainer, "BARREIRA CÓSMICA! 🛡️", "heal");
   }
 
   // 2. Reação ao Poder do Jogador: Se o jogador estiver com Poder Temporário ativo
   if (playerPowerBoostActive && Math.random() < 0.55) {
-    addLogMessage(`⚠️ VISÃO TÁTICA: O Chefe notou seu Poder ativado e prepara um golpe veloz de contenção!`, "log-special");
-    const quickAtk = attacks.find(a => a.type === "quick");
-    if (quickAtk) return quickAtk.type;
+    addLogMessage(`⚠️ VISÃO TÁTICA: O Chefe notou sua carga de poder e prepara um contragolpe pesado de contenção!`, "log-special");
+    const strongAtk = attacks.find(a => a.type === "strong");
+    if (strongAtk) return strongAtk.type;
   }
 
-  // 3. Finalização: Se o Jogador estiver com pouco HP (<= 35%), priorizar ataque devastador
-  if (playerHpPct <= 35) {
+  // 3. Finalização Letal: Se o Jogador estiver com pouco HP (<= 40%), priorizar golpe de nocaute
+  if (playerHpPct <= 40) {
     const specialAtk = attacks.find(a => a.type === "special");
     const strongAtk = attacks.find(a => a.type === "strong");
-    if (specialAtk && Math.random() < 0.65) {
-      addLogMessage(`🔥 VISÃO TÁTICA: O Chefe identificou sua fraqueza e vai desferir um Ataque Especial!`, "log-enemy");
+    if (specialAtk) {
+      addLogMessage(`🔥 VISÃO TÁTICA DO CHEFE: ${activeBossConfig.name} identificou sua fraqueza e vai liberar um Golpe Especial letal!`, "log-enemy");
       return "special";
     }
     if (strongAtk) {
-      addLogMessage(`💥 VISÃO TÁTICA: O Chefe concentrou energia para um Golpe Forte finalizador!`, "log-enemy");
+      addLogMessage(`💥 VISÃO TÁTICA DO CHEFE: ${activeBossConfig.name} desferirá um Golpe Forte para selar a vitória!`, "log-enemy");
       return "strong";
     }
   }
 
   // 4. Vantagem Elemental: Priorizar Ataque Especial se tiver vantagem
   const typeAdv = getTypeAdvantage(activeBossConfig.type, playerPokemon.type);
-  if (typeAdv === "super" && Math.random() < 0.55) {
+  if (typeAdv === "super" && Math.random() < 0.70) {
     const specialAtk = attacks.find(a => a.type === "special");
     if (specialAtk) {
-      addLogMessage(`✨ ESTRATÉGIA: O Chefe aproveitou sua vantagem elemental para intensificar o golpe!`, "log-enemy");
+      addLogMessage(`✨ ESTRATÉGIA DO CHEFE: ${activeBossConfig.name} aproveita sua vantagem elemental com força máxima!`, "log-enemy");
       return "special";
     }
   }
 
-  // 5. Variabilidade Orgânica (20% aleatório entre o rol de ataques)
+  // 5. Prioridade ofensiva natural (prefere Strong e Special a golpes rápidos fracos)
+  const nonQuick = attacks.filter(a => a.type !== "quick");
+  if (nonQuick.length > 0 && Math.random() < 0.75) {
+    const chosenNonQuick = nonQuick[Math.floor(Math.random() * nonQuick.length)];
+    return chosenNonQuick.type;
+  }
+
   const chosen = attacks[Math.floor(Math.random() * attacks.length)];
   return chosen ? chosen.type : "strong";
+}
+
+/**
+ * IA Estratégica do Adversário para Batalhas Normais e Aventura
+ * Garante que o adversário não fique fraco ou passivo
+ */
+function decideEnemyAction() {
+  if (activeBossConfig) {
+    return decideBossAction();
+  }
+
+  const enemyHpPct = (enemyHP / enemyMaxHP) * 100;
+  const playerHpPct = (playerHP / currentMaxHP) * 100;
+  const typeAdv = getTypeAdvantage(enemyPokemon.type, playerPokemon.type);
+  const currentEpCost = activeBattleEvent && activeBattleEvent.modifyEnergyCost
+    ? activeBattleEvent.modifyEnergyCost(45)
+    : 45;
+
+  // 1. Táticas Especiais do Adversário (1x por batalha cada)
+  // A) Recuperação de Emergência quando HP <= 35%
+  if (enemyHpPct <= 35 && !enemyHealUsed && Math.random() < 0.55) {
+    enemyHealUsed = true;
+    const healAmount = Math.min(30, enemyMaxHP - enemyHP);
+    CombatSystem.heal("enemy", healAmount, "💚 Recuperação Tática");
+    addLogMessage(`💚 ESTRATÉGIA DO ADVERSÁRIO: ${enemyPokemon.name} usou Recuperação de Emergência (+${healAmount} HP)!`, "log-enemy");
+    SoundFX.heal();
+  }
+  // B) Barreira de Proteção quando HP <= 45%
+  else if (enemyHpPct <= 45 && !enemyShieldUsed && Math.random() < 0.50) {
+    enemyShieldUsed = true;
+    enemyShieldActive = true;
+    if (DOM.enemySpriteWrapper) DOM.enemySpriteWrapper.classList.add("shield-active");
+    addLogMessage(`🛡️ ESTRATÉGIA DO ADVERSÁRIO: ${enemyPokemon.name} ergueu uma Barreira Defensiva que absorverá 50% do próximo golpe!`, "log-enemy");
+    SoundFX.defend();
+    showFloatingText(DOM.enemyDamageContainer, "BARREIRA ATIVA! 🛡️", "heal");
+  }
+  // C) Foco de Fúria / Sobrecarga quando HP <= 60%
+  else if (enemyHpPct <= 60 && !enemyPowerBoostUsed && Math.random() < 0.45) {
+    enemyPowerBoostUsed = true;
+    enemyPowerBoostActive = true;
+    if (DOM.enemySpriteWrapper) DOM.enemySpriteWrapper.classList.add("power-boost-active");
+    addLogMessage(`⚡ FÚRIA DO ADVERSÁRIO: ${enemyPokemon.name} concentrou energia brutal (+40% de dano no próximo ataque)!`, "log-enemy");
+    SoundFX.powerBoost();
+    showFloatingText(DOM.enemyDamageContainer, "FÚRIA ATIVA! ⚡", "crit");
+  }
+
+  // 2. Escolha de Ataques da IA
+  // A) Oportunidade de Nocaute: Se a vida do jogador estiver crítica (<= 38 HP)
+  if (playerHP <= 38) {
+    if (enemyEP >= currentEpCost) {
+      enemyEP = Math.max(0, enemyEP - currentEpCost);
+      updateEnergyBar("enemy", enemyEP);
+      addLogMessage(`🔥 OPORTUNIDADE LETAL: ${enemyPokemon.name} detectou seu HP crítico e desfere um Ataque Especial finalizador!`, "log-enemy");
+      return "special";
+    }
+    // Caso não tenha EP para especial, desfere Golpe Forte pesado
+    enemyEP = Math.min(MAX_EP, enemyEP + 20);
+    updateEnergyBar("enemy", enemyEP);
+    addLogMessage(`💥 PRESSÃO DO ADVERSÁRIO: ${enemyPokemon.name} desferiu um Golpe Forte letal buscando o nocaute!`, "log-enemy");
+    return "strong";
+  }
+
+  // B) Liberação de Ataque Especial quando tem energia (>= 45 EP)
+  if (enemyEP >= currentEpCost) {
+    if (Math.random() < 0.75) {
+      enemyEP = Math.max(0, enemyEP - currentEpCost);
+      updateEnergyBar("enemy", enemyEP);
+      addLogMessage(`🔮 PODER MÁXIMO: ${enemyPokemon.name} acumulou energia e vai desencadear seu ATAQUE ESPECIAL!`, "log-enemy");
+      return "special";
+    }
+  }
+
+  // C) Vantagem Elemental Super Eficaz
+  if (typeAdv === "super" && Math.random() < 0.65) {
+    if (enemyEP >= currentEpCost) {
+      enemyEP = Math.max(0, enemyEP - currentEpCost);
+      updateEnergyBar("enemy", enemyEP);
+      addLogMessage(`✨ VANTAGEM TÁTICA: ${enemyPokemon.name} aproveita sua vantagem elemental com poder total!`, "log-enemy");
+      return "special";
+    }
+    enemyEP = Math.min(MAX_EP, enemyEP + 20);
+    updateEnergyBar("enemy", enemyEP);
+    addLogMessage(`💥 VANTAGEM TÁTICA: ${enemyPokemon.name} aproveita sua vantagem elemental com um Golpe Forte!`, "log-enemy");
+    return "strong";
+  }
+
+  // D) Ritmo Ofensivo Padrão: 60% Golpe Forte, 40% Golpe Rápido
+  if (Math.random() < 0.60) {
+    enemyEP = Math.min(MAX_EP, enemyEP + 20);
+    updateEnergyBar("enemy", enemyEP);
+    return "strong";
+  } else {
+    enemyEP = Math.min(MAX_EP, enemyEP + 25);
+    updateEnergyBar("enemy", enemyEP);
+    return "quick";
+  }
 }
 
 function triggerEnemyTurn() {
@@ -2375,31 +3584,15 @@ function triggerEnemyTurn() {
     return;
   }
 
-  // Escolha do ataque do inimigo
-  let enemyAttackType = "quick";
-  if (activeBossConfig) {
-    enemyAttackType = decideBossAction();
-  } else {
-    const r = Math.random();
-    if (r > 0.65 && enemyEP >= 40) {
-      enemyAttackType = "special";
-      enemyEP = Math.max(0, enemyEP - 40);
-    } else if (r > 0.35) {
-      enemyAttackType = "strong";
-      enemyEP = Math.min(MAX_EP, enemyEP + 15);
-    } else {
-      enemyAttackType = "quick";
-      enemyEP = Math.min(MAX_EP, enemyEP + 25);
-    }
-    updateEnergyBar("enemy", enemyEP);
-  }
+  // Decisão inteligente de ação do adversário
+  const enemyAttackType = decideEnemyAction();
 
-  // Inicia QTE de Reação (Defesa ou Esquiva)
+  // Inicia QTE de Reação (Defesa ou Esquiva) com tempo e avisos proporcionais à ameaça
   startReactionQTE(enemyAttackType);
 }
 
 /**
- * Quick-Time-Event (QTE): Janela de 1.8s onde o jogador pode reagir
+ * Quick-Time-Event (QTE): Janela dinâmica e justa de reação
  */
 function startReactionQTE(incomingAttackType) {
   isReactionActive = true;
@@ -2407,12 +3600,53 @@ function startReactionQTE(incomingAttackType) {
   currentIncomingEnemyAttack = incomingAttackType || "quick";
 
   DOM.reactionOverlay.classList.remove("hidden");
-  DOM.reactionTitle.textContent = `⚠️ ${enemyPokemon.name} vai usar ${getAttackName(currentIncomingEnemyAttack)}! REAGIR:`;
+  
+  const moveName = getAttackName(currentIncomingEnemyAttack, enemyPokemon);
+  const isSpecial = currentIncomingEnemyAttack === "special";
+  const isStrong = currentIncomingEnemyAttack === "strong";
+
+  if (isSpecial) {
+    DOM.reactionTitle.innerHTML = `🔥 <span style="color:#ef4444; font-weight:900;">ALERTA MÁXIMO!</span> ${enemyPokemon.name} prepara <span style="color:#fbbf24;">${moveName}</span>!`;
+    if (DOM.btnQteDefend) {
+      const sub = DOM.btnQteDefend.querySelector(".qte-btn-sub");
+      if (sub) sub.textContent = "Barreira Firme (Bloqueia 50%) • +15 EP";
+    }
+    if (DOM.btnQteDodge) {
+      const sub = DOM.btnQteDodge.querySelector(".qte-btn-sub");
+      if (sub) sub.textContent = "Esquiva no Limite (-65% dano residual de área)";
+    }
+  } else if (isStrong) {
+    DOM.reactionTitle.innerHTML = `💥 <span style="color:#f97316; font-weight:900;">GOLPE PESADO!</span> ${enemyPokemon.name} prepara <span style="color:#fbbf24;">${moveName}</span>!`;
+    if (DOM.btnQteDefend) {
+      const sub = DOM.btnQteDefend.querySelector(".qte-btn-sub");
+      if (sub) sub.textContent = "Bloqueio (Absorve 50%) • +15 EP";
+    }
+    if (DOM.btnQteDodge) {
+      const sub = DOM.btnQteDodge.querySelector(".qte-btn-sub");
+      if (sub) sub.textContent = "Esquiva Parcial (-75% do impacto)";
+    }
+  } else {
+    DOM.reactionTitle.innerHTML = `⚡ ${enemyPokemon.name} vai usar <span style="color:#38bdf8;">${moveName}</span>! REAGIR:`;
+    if (DOM.btnQteDefend) {
+      const sub = DOM.btnQteDefend.querySelector(".qte-btn-sub");
+      if (sub) sub.textContent = "Defesa Rápida (Absorve 45%) • +15 EP";
+    }
+    if (DOM.btnQteDodge) {
+      const sub = DOM.btnQteDodge.querySelector(".qte-btn-sub");
+      if (sub) sub.textContent = "Esquiva Perfeita (0 Dano & +10 EP)";
+    }
+  }
+
   DOM.reactionTimerBar.style.width = "100%";
 
-  const durationMs = 1800;
-  const startTime = Date.now();
+  let durationMs = 1350;
+  if (isStrong) durationMs = 1100;
+  if (isSpecial) durationMs = 950;
 
+  if (currentDifficulty === "easy") durationMs += 250;
+  else if (currentDifficulty === "hard") durationMs -= 150;
+
+  const startTime = Date.now();
   if (reactionTimerId) clearInterval(reactionTimerId);
 
   reactionTimerId = setInterval(() => {
@@ -2427,7 +3661,7 @@ function startReactionQTE(incomingAttackType) {
         resolveReaction("none", currentIncomingEnemyAttack);
       }
     }
-  }, 30);
+  }, 25);
 }
 
 function resolveReaction(action, attackType) {
@@ -2452,47 +3686,73 @@ function resolveReaction(action, attackType) {
 
     let rawDamageResult = calculateDamage("enemy", resolvedAttackType);
     let finalDamage = rawDamageResult.finalDamage;
+    const attackMoveName = getAttackName(resolvedAttackType, enemyPokemon);
 
-    // 6. Escudo de Proteção do Jogador (Melhoria 6)
+    // Consumo do Poder Temporário do Adversário
+    if (enemyPowerBoostActive) {
+      enemyPowerBoostActive = false;
+      if (DOM.enemySpriteWrapper) DOM.enemySpriteWrapper.classList.remove("power-boost-active");
+    }
+
+    // Escudo de Proteção do Jogador (se ativo)
     if (playerShieldActive && finalDamage > 0) {
       finalDamage = Math.max(1, Math.round(finalDamage * 0.50));
       playerShieldActive = false;
       if (DOM.badgeShieldStatus) DOM.badgeShieldStatus.textContent = "USADO";
       if (DOM.playerSpriteWrapper) DOM.playerSpriteWrapper.classList.remove("shield-active");
-      addLogMessage("🛡️ O escudo de proteção absorveu o impacto e reduziu o dano sofrido!", "log-special");
+      addLogMessage("🛡️ O escudo de proteção absorveu o impacto e reduziu o dano sofrido pela metade!", "log-special");
       showFloatingText(DOM.playerDamageContainer, "ESCUDO ABSORVEU!", "crit");
     }
 
     if (action === "dodge") {
-      // Esquiva Perfeita: 0 Dano + Gera Energia + Bônus de Combo!
-      finalDamage = 0;
-      SoundFX.dodge();
-      showFloatingText(DOM.playerDamageContainer, "ESQUIVA PERFEITA! 💨", "heal");
-      addLogMessage(`💨 ESQUIVA PERFEITA! Você desviou do ataque de ${enemyPokemon.name} e contra-atacou o ritmo!`, "log-special");
-      CombatSystem.gainEnergy("player", 15);
-      advancePlayerCombo();
+      if (resolvedAttackType === "quick") {
+        // Esquiva Total em golpe rápido: 0 Dano + Gera Energia + Bônus de Combo!
+        finalDamage = 0;
+        SoundFX.dodge();
+        showFloatingText(DOM.playerDamageContainer, "ESQUIVA PERFEITA! 💨", "heal");
+        addLogMessage(`💨 ESQUIVA PERFEITA! Você desviou do ataque de ${enemyPokemon.name} (${attackMoveName})!`, "log-special");
+        CombatSystem.gainEnergy("player", 10);
+        advancePlayerCombo();
+      } else if (resolvedAttackType === "strong") {
+        // Golpe Forte: Esquiva Parcial (evita 75%, sofre 25% de raspão)
+        finalDamage = Math.max(1, Math.round(finalDamage * 0.25));
+        SoundFX.dodge();
+        playerHP = Math.max(0, playerHP - finalDamage);
+        updateHPBar("player", playerHP, currentMaxHP);
+        showFloatingText(DOM.playerDamageContainer, `ESQUIVA PARCIAL (-${finalDamage}) 💨`, "crit");
+        addLogMessage(`💨 ESQUIVA PARCIAL: O golpe forte (${attackMoveName}) de ${enemyPokemon.name} foi devastador! Você esquivou de 75% do impacto, mas levou ${finalDamage} de raspão!`, "log-special");
+        CombatSystem.gainEnergy("player", 10);
+      } else {
+        // Ataque Especial: Salto no Limite (evita 65%, sofre 35% de onda de choque)
+        finalDamage = Math.max(1, Math.round(finalDamage * 0.35));
+        SoundFX.dodge();
+        playerHP = Math.max(0, playerHP - finalDamage);
+        updateHPBar("player", playerHP, currentMaxHP);
+        showFloatingText(DOM.playerDamageContainer, `ONDA DE IMPACTO (-${finalDamage}) 💨`, "crit");
+        addLogMessage(`💨 ESQUIVA NO LIMITE: Você saltou no último instante, mas a explosão colossal de ${attackMoveName} causou ${finalDamage} de dano residual!`, "log-special");
+        CombatSystem.gainEnergy("player", 15);
+      }
 
     } else if (action === "defend") {
-      // Defesa: Reduz 65% do dano + Gera +20 EP
-      finalDamage = Math.max(1, Math.round(finalDamage * 0.35));
+      // Defesa: Bloqueia 50% do dano + Gera +15 EP
+      finalDamage = Math.max(1, Math.round(finalDamage * 0.50));
       SoundFX.defend();
       showFloatingText(DOM.playerDamageContainer, `🛡️ BLOQUEADO (-${finalDamage})`, "crit");
-      addLogMessage(`🛡️ POSTURA DEFENSIVA! Dano absorvido e reduzido para ${finalDamage}! Ganhou +20 EP.`, "log-special");
-      CombatSystem.gainEnergy("player", 20);
+      addLogMessage(`🛡️ GUARDA DEFENSIVA! Você resistiu ao impacto de ${attackMoveName} reduzindo o dano para ${finalDamage}! Ganhou +15 EP.`, "log-special");
+      CombatSystem.gainEnergy("player", 15);
 
-      // Aplica dano reduzido
       playerHP = Math.max(0, playerHP - finalDamage);
       updateHPBar("player", playerHP, currentMaxHP);
 
     } else {
-      // Falha / Sem Reação: Sofre dano completo e quebra combo
+      // Falha / Sem Reação no tempo: Sofre 100% de dano total!
       SoundFX.hit();
 
       // Partícula de impacto elemental no jogador
       spawnElementalHitBurst(DOM.playerDamageContainer, enemyPokemon.typeClass);
 
-      // Efeito de impacto de ataque crítico (Melhoria 5)
-      if (rawDamageResult.isCrit) {
+      // Tremor de tela dramático se for forte, especial ou crítico
+      if (rawDamageResult.isCrit || resolvedAttackType === "strong" || resolvedAttackType === "special") {
         SoundFX.crit();
         triggerCritImpact();
       }
@@ -2503,30 +3763,56 @@ function resolveReaction(action, attackType) {
       DOM.playerSprite.classList.add("anim-hit");
       setTimeout(() => DOM.playerSprite.classList.remove("anim-hit"), 450);
 
-      showFloatingText(DOM.playerDamageContainer, `-${finalDamage} HP`, rawDamageResult.isCrit ? "crit" : "normal");
-      
-      let enemyLogMsg = `💥 ${enemyPokemon.name} acertou em cheio com ${getAttackName(resolvedAttackType)} causando ${finalDamage} de dano!`;
-      if (rawDamageResult.isCrit) enemyLogMsg += " 💥 Ataque crítico!";
+      showFloatingText(DOM.playerDamageContainer, `-${finalDamage} HP`, (rawDamageResult.isCrit || resolvedAttackType === "special") ? "crit" : "normal");
+
+      let enemyLogMsg = `💥 ${enemyPokemon.name} acertou em cheio com ${attackMoveName} causando ${finalDamage} de dano!`;
+      if (rawDamageResult.isCrit) enemyLogMsg += " 💥 Ataque Crítico Devastador!";
       addLogMessage(enemyLogMsg, "log-enemy");
 
-      // Vantagem de tipo do golpe adversário (Melhoria 1)
       if (rawDamageResult.typeAdvantage === "super") {
         addLogMessage("⚠️ O ataque do adversário é super eficaz!", "log-enemy");
       } else if (rawDamageResult.typeAdvantage === "weak") {
         addLogMessage("🛡️ O ataque do adversário não é muito eficaz contra seu tipo.", "log-special");
       }
 
-      if (rawDamageResult.isCrit) {
-        addLogMessage("💥 Ataque crítico do adversário!", "log-enemy");
-      }
-
       resetPlayerCombo();
+
+      // Aplica efeito de status se atingido em cheio por golpe com status
+      if (enemyPokemon.moves && enemyPokemon.moves[resolvedAttackType]) {
+        const moveData = enemyPokemon.moves[resolvedAttackType];
+        if (moveData.status && Math.random() < (moveData.statusChance || 0.30)) {
+          CombatSystem.applyStatus("player", moveData.status, 2);
+        }
+      }
+    }
+
+    // Passiva do Pikachu adversário: Segundo golpe surpresa
+    if (enemyPokemon.passiveId === "speed" && Math.random() < 0.35 && playerHP > 0) {
+      setTimeout(() => {
+        const extraDmg = Math.floor(Math.random() * 8) + 8;
+        playerHP = Math.max(0, playerHP - extraDmg);
+        updateHPBar("player", playerHP, currentMaxHP);
+        showFloatingText(DOM.playerDamageContainer, `-${extraDmg} HP`, "normal");
+        addLogMessage(`⚡ Agilidade do adversário! ${enemyPokemon.name} desferiu um choque surpresa veloz de ${extraDmg} de dano!`, "log-enemy");
+        SoundFX.attack("quick");
+        if (playerHP <= 0) {
+          DOM.playerSprite.classList.add("anim-defeat");
+          DOM.enemySprite.classList.add("anim-victory");
+          setTimeout(() => endGame(false), 700);
+        }
+      }, 450);
     }
 
     // Gatilhos de Arena para o golpe inimigo
     if (finalDamage > 0) {
       if (currentArena && currentArena.onHit) currentArena.onHit("enemy", "player", rawDamageResult.isCrit);
       if (currentArena && currentArena.onDamageDealt) currentArena.onDamageDealt("enemy", finalDamage);
+    }
+
+    // Momento Decisivo quando a vida do jogador fica baixa (Requisito 7)
+    if (playerHP > 0 && playerHP <= currentMaxHP * 0.30 && !turningMomentTriggered) {
+      turningMomentTriggered = true;
+      triggerTurningMoment(`⚠️ MOMENTO DECISIVO! ${playerPokemon.name} resiste no limite da batalha!`);
     }
 
     // Checa se o jogador caiu
@@ -2546,6 +3832,11 @@ function endEnemyTurnPhase() {
   try {
     // Processa status de fim de turno do inimigo
     CombatSystem.processTurnEndStatuses("enemy");
+
+    // Passiva de Regeneração do Venusaur adversário
+    if (enemyPokemon && enemyPokemon.passiveId === "heal" && enemyHP > 0 && enemyHP < enemyMaxHP) {
+      CombatSystem.heal("enemy", 10, "🌿 Síntese do Venusaur");
+    }
 
     if (enemyHP <= 0) {
       DOM.playerSprite.classList.add("anim-victory");
@@ -2577,23 +3868,49 @@ function endEnemyTurnPhase() {
 }
 
 // ==========================================
-// 19. CÁLCULO GERAL DE DANO & MULTIPLICADORES
+// 19. CÁLCULO GERAL DE DANO & MULTIPLICADORES (Equilibrado e Justo)
 // ==========================================
 function calculateDamage(attackerSide, attackType) {
   const attacker = attackerSide === "player" ? playerPokemon : enemyPokemon;
   const defender = attackerSide === "player" ? enemyPokemon : playerPokemon;
 
   let base = 0;
-  if (attackType === "quick") base = Math.floor(Math.random() * 8) + 14;   // 14 a 21
-  else if (attackType === "strong") base = Math.floor(Math.random() * 12) + 22; // 22 a 33
-  else if (attackType === "special") base = Math.floor(Math.random() * 15) + 36; // 36 a 50
+  if (attackType === "quick") {
+    base = Math.floor(Math.random() * 9) + 16;   // 16 a 24
+  } else if (attackType === "strong") {
+    base = Math.floor(Math.random() * 15) + 30;  // 30 a 44 (golpe forte que tira ~35% de vida!)
+  } else if (attackType === "special") {
+    base = Math.floor(Math.random() * 19) + 48;  // 48 a 66 (devastador, tira ~50-60% de vida!)
+  }
+
+  // Se o Chefe tiver valores de dano próprios configurados na fase
+  if (attackerSide === "enemy" && activeBossConfig) {
+    const phaseCfg = activeBossConfig.phases[currentBossPhase - 1] || activeBossConfig.phases[0];
+    if (phaseCfg && phaseCfg.attacks) {
+      const bossAtk = phaseCfg.attacks.find(a => a.type === attackType);
+      if (bossAtk && bossAtk.damage && bossAtk.damage.length === 2) {
+        const [minD, maxD] = bossAtk.damage;
+        base = Math.floor(Math.random() * (maxD - minD + 1)) + minD;
+      }
+    }
+  }
+
+  // Influência dos atributos ATK e DEF do Pokémon
+  if (attacker.stats && attacker.stats.atk) {
+    const atkRatio = attacker.stats.atk / 85;
+    base = Math.round(base * (0.8 + 0.2 * atkRatio));
+  }
+  if (defender.stats && defender.stats.def) {
+    const defRatio = defender.stats.def / 75;
+    base = Math.round(base * (1.1 - 0.1 * defRatio));
+  }
 
   // Passivas do Pokémon
-  if (attacker.passiveId === "power") base = Math.round(base * 1.15);
+  if (attacker.passiveId === "power") base = Math.round(base * 1.20);
   if (attacker.passiveId === "balanced") {
-    if (attackType === "quick") base = Math.max(18, base);
-    if (attackType === "strong") base = Math.max(26, base);
-    if (attackType === "special") base = Math.max(40, base);
+    if (attackType === "quick") base = Math.max(20, base);
+    if (attackType === "strong") base = Math.max(34, base);
+    if (attackType === "special") base = Math.max(52, base);
   }
   if (attacker.passiveId === "fast" && attackType === "quick") base = Math.round(base * 1.25);
   if (attacker.passiveId === "special" && attackType === "special") base = Math.round(base * 1.30);
@@ -2604,7 +3921,7 @@ function calculateDamage(attackerSide, attackType) {
     base = currentArena.modifyDamage(attacker, defender, base);
   }
 
-  // Modificador de Clima (Requisito 9)
+  // Modificador de Clima
   if (currentWeather && currentWeather.modifyDamage) {
     base = currentWeather.modifyDamage(attacker, defender, base);
   }
@@ -2614,27 +3931,29 @@ function calculateDamage(attackerSide, attackType) {
     base = activeBattleEvent.onModifyDamage(base);
   }
 
-  // 1. Vantagem entre os tipos (Melhoria 1)
+  // Vantagem entre os tipos
   const typeAdv = getTypeAdvantage(attacker.type, defender.type);
   if (typeAdv === "super") {
-    base = Math.round(base * 1.30); // Dano adicional
+    base = Math.round(base * 1.30);
   } else if (typeAdv === "weak") {
-    base = Math.round(base * 0.75); // Dano reduzido por desvantagem
+    base = Math.round(base * 0.75);
   }
 
-  // 3. Nível de Dificuldade (Melhoria 3)
-  // Afeta exclusivamente o dano causado pelo adversário
+  // Nível de Dificuldade
   if (attackerSide === "enemy") {
     if (currentDifficulty === "easy") {
-      base = Math.round(base * 0.70); // Menos dano no Fácil
+      base = Math.round(base * 0.80);
     } else if (currentDifficulty === "hard") {
-      base = Math.round(base * 1.35); // Mais dano no Difícil
+      base = Math.round(base * 1.30);
     }
   }
 
-  // 7. Poder Temporário do Jogador (Melhoria 7)
+  // Poder Temporário / Fúria do Atacante
   if (attackerSide === "player" && playerPowerBoostActive) {
-    base = Math.round(base * 1.50); // +50% de dano no próximo ataque
+    base = Math.round(base * 1.50);
+  }
+  if (attackerSide === "enemy" && enemyPowerBoostActive) {
+    base = Math.round(base * 1.40);
   }
 
   // Modificador de Status: Queimado causa -15%
@@ -2655,10 +3974,9 @@ function calculateDamage(attackerSide, attackType) {
       guaranteedCrit = true;
     }
   }
-
   base = Math.round(base * comboMult);
 
-  // Chance de Crítico (Melhoria 5 & Modo Treino)
+  // Chance de Crítico
   let isCrit = guaranteedCrit;
   if (attackerSide === "player" && nextAttackForcedCrit) {
     isCrit = true;
@@ -2666,7 +3984,13 @@ function calculateDamage(attackerSide, attackType) {
   }
 
   if (!isCrit) {
-    let critRate = attacker.passiveId === "crit" ? 0.35 : 0.15;
+    let critRate = attacker.passiveId === "crit" ? 0.35 : 0.16;
+    if (attackerSide === "enemy") {
+      // O adversário ganha bônus de crítico em golpes fortes/especiais e quando está com pouco HP (desespero)
+      if (attackType === "strong") critRate += 0.10;
+      if (attackType === "special") critRate += 0.15;
+      if (enemyHP / enemyMaxHP <= 0.35) critRate += 0.15;
+    }
     if (currentWeather && currentWeather.id === "storm") critRate += 0.15;
     if (currentArena.modifyCritChance) critRate = currentArena.modifyCritChance(critRate);
     if (activeBattleEvent && activeBattleEvent.modifyCritChance) critRate += activeBattleEvent.modifyCritChance;
@@ -2678,7 +4002,7 @@ function calculateDamage(attackerSide, attackType) {
   }
 
   if (isCrit) {
-    base = Math.round(base * 1.7);
+    base = Math.round(base * 1.70);
   }
 
   return {
@@ -2881,6 +4205,8 @@ function triggerBossPhaseShift(newPhaseCfg) {
   DOM.phaseAlert.classList.remove("hidden");
   DOM.phaseAlertMsg.textContent = `⚠️ TRANSFORMAÇÃO! ${activeBossConfig.name.toUpperCase()} ENTROU NA ${newPhaseCfg.title.toUpperCase()}!`;
 
+  triggerTurningMoment(`⚠️ FASE ${currentBossPhase}: ${activeBossConfig.name.toUpperCase()} DESPERTOU ${newPhaseCfg.title.toUpperCase()}!`);
+
   setTimeout(() => {
     DOM.phaseAlert.classList.add("hidden");
   }, 4000);
@@ -2941,6 +4267,14 @@ function loadAdventureArea(areaIdx) {
   generateAdventureAreaNodes(areaData);
   updateAdventureHUD();
   renderAdventureMapTree();
+
+  // Cena narrativa imersiva de transição entre capítulos (Requisito 6)
+  showAdventureStoryScene(
+    `Capítulo ${areaIdx + 1}: ${areaData.name}`,
+    areaData.narrative,
+    `Conquiste a área, derrote ${areaData.bossName} e avance!`,
+    null
+  );
 }
 
 function updateAdventureAreasBar() {
@@ -3363,6 +4697,9 @@ function calculateBattleScore(isVictory) {
 }
 
 function endGame(isVictory) {
+  if (hasEndedCurrentMatch) return;
+  hasEndedCurrentMatch = true;
+
   isBattleOver = true;
   enableAttackButtons(false);
   DOM.criticalAlert.classList.add("hidden");
@@ -3377,6 +4714,20 @@ function endGame(isVictory) {
   }
 
   const resultScore = calculateBattleScore(isVictory);
+
+  // Registro de Vitória / Derrota e Desbloqueio de Pokémon (Requisitos 3, 8, 9 & 12)
+  let newlyUnlockedPoke = null;
+  const dmgDealt = Math.max(0, enemyMaxHP - enemyHP);
+  if (isVictory) {
+    if (currentMode !== "training") {
+      newlyUnlockedPoke = StorageManager.recordVictory(playerPokemon, dmgDealt, totalCritsAchieved);
+      updateUnlockProgressBar();
+    }
+  } else {
+    if (currentMode !== "training") {
+      StorageManager.recordDefeat(playerPokemon, dmgDealt, totalCritsAchieved);
+    }
+  }
 
   // Registra no Replay
   if (isVictory) {
@@ -3407,6 +4758,11 @@ function endGame(isVictory) {
     DOM.modalDesc.textContent = `${playerPokemon.name} superou com maestria o confronto contra ${enemyPokemon.name}!`;
     DOM.statReward.textContent = `🪙 +${goldEarned}`;
     addLogMessage(`🏆 Fim de batalha: ${playerPokemon.name} é o grande campeão! Pontuação: ${resultScore.score} pts (${resultScore.rank}).`, "log-special");
+
+    // Fala e Reação de Personalidade do Pokémon Vencedor (Requisito 7)
+    if (playerPokemon && playerPokemon.personality && playerPokemon.personality.victory) {
+      addLogMessage(`💬 ${playerPokemon.name}: "${playerPokemon.personality.victory}"`, "log-player");
+    }
   } else {
     SoundFX.defeat();
     DOM.modalCard.classList.add("defeat");
@@ -3415,6 +4771,11 @@ function endGame(isVictory) {
     DOM.modalDesc.textContent = `${enemyPokemon.name} levou a melhor desta vez. Ajuste sua estratégia e tente novamente!`;
     DOM.statReward.textContent = "🪙 +10";
     addLogMessage(`💀 Fim de batalha: Você foi derrotado. Pontuação acumulada: ${resultScore.score} pts.`, "log-enemy");
+
+    // Reação de Derrota
+    if (playerPokemon) {
+      addLogMessage(`💬 ${playerPokemon.name} recua com dignidade para treinar mais e voltar mais forte!`, "log-enemy");
+    }
   }
 
   DOM.statTurns.textContent = `${totalTurns} turnos`;
@@ -3422,6 +4783,14 @@ function endGame(isVictory) {
 
   DOM.resultModal.classList.remove("hidden");
   DOM.resultModal.style.display = "flex";
+
+  // Se um novo Pokémon foi desbloqueado com esta vitória, exibe modal de comemoração!
+  if (newlyUnlockedPoke) {
+    setTimeout(() => {
+      openUnlockCelebrationModal(newlyUnlockedPoke);
+      renderPokemonSelection();
+    }, 1500);
+  }
 }
 
 function handlePostBattleContinue() {
@@ -3481,7 +4850,18 @@ function addLogMessage(message, className = "log-player") {
   DOM.battleLog.scrollTop = DOM.battleLog.scrollHeight;
 }
 
-function getAttackName(type) {
+function getAttackName(type, pokemon = null) {
+  if (pokemon && pokemon.moves && pokemon.moves[type]) {
+    return pokemon.moves[type].name;
+  }
+  // Se for chefe com lista de ataques customizada
+  if (pokemon && activeBossConfig && pokemon === activeBossConfig) {
+    const phaseCfg = activeBossConfig.phases[currentBossPhase - 1] || activeBossConfig.phases[0];
+    if (phaseCfg && phaseCfg.attacks) {
+      const bAtk = phaseCfg.attacks.find(a => a.type === type);
+      if (bAtk) return bAtk.name;
+    }
+  }
   switch (type) {
     case "quick": return "Ataque Rápido ⚡";
     case "strong": return "Ataque Forte 💥";
@@ -3515,6 +4895,95 @@ function enableAttackButtons(enabled) {
 // 31. EVENT LISTENERS DO JOGO
 // ==========================================
 function setupEventListeners() {
+  // Modal de Configurações e Acessibilidade (Requisito 5)
+  if (DOM.btnOpenSettings) DOM.btnOpenSettings.addEventListener("click", openSettingsModal);
+  if (DOM.btnCloseSettings) DOM.btnCloseSettings.addEventListener("click", closeSettingsModal);
+
+  if (DOM.btnSettingMusic) {
+    DOM.btnSettingMusic.addEventListener("click", () => {
+      MusicEngine.toggle();
+      StorageManager.data.settings.music = MusicEngine.enabled;
+      StorageManager.save();
+      DOM.btnSettingMusic.textContent = MusicEngine.enabled ? "Música: ON" : "Música: OFF";
+      DOM.btnSettingMusic.classList.toggle("active", MusicEngine.enabled);
+      updateAudioUI();
+    });
+  }
+
+  if (DOM.btnSettingSound) {
+    DOM.btnSettingSound.addEventListener("click", () => {
+      SoundFX.toggle();
+      StorageManager.data.settings.sound = SoundFX.enabled;
+      StorageManager.save();
+      DOM.btnSettingSound.textContent = SoundFX.enabled ? "Sons: ON" : "Sons: OFF";
+      DOM.btnSettingSound.classList.toggle("active", SoundFX.enabled);
+      updateAudioUI();
+    });
+  }
+
+  if (DOM.settingVolumeSlider) {
+    DOM.settingVolumeSlider.addEventListener("input", (e) => {
+      const val = parseInt(e.target.value);
+      StorageManager.data.settings.volume = val;
+      StorageManager.save();
+      if (DOM.settingVolumeVal) DOM.settingVolumeVal.textContent = `${val}%`;
+    });
+  }
+
+  if (DOM.btnSettingMotion) {
+    DOM.btnSettingMotion.addEventListener("click", () => {
+      const cur = !!StorageManager.data.settings.reducedMotion;
+      StorageManager.data.settings.reducedMotion = !cur;
+      StorageManager.save();
+      StorageManager.applySettingsToApp();
+      DOM.btnSettingMotion.textContent = !cur ? "Efeitos: Reduzidos" : "Efeitos: Normais";
+      DOM.btnSettingMotion.classList.toggle("active", !cur);
+    });
+  }
+
+  if (DOM.btnSettingSpeed) {
+    DOM.btnSettingSpeed.addEventListener("click", () => {
+      const curSpeed = StorageManager.data.settings.battleSpeed === 1.5 ? 1 : 1.5;
+      StorageManager.data.settings.battleSpeed = curSpeed;
+      StorageManager.save();
+      DOM.btnSettingSpeed.textContent = curSpeed === 1.5 ? "Velocidade: Rápida (1.5x)" : "Velocidade: Normal";
+      DOM.btnSettingSpeed.classList.toggle("active", curSpeed === 1.5);
+    });
+  }
+
+  if (DOM.btnSettingReset) {
+    DOM.btnSettingReset.addEventListener("click", () => {
+      if (confirm("⚠️ Tem certeza de que deseja resetar todo o progresso? Você voltará para os 8 Pokémon iniciais e perderá as vitórias salvas.")) {
+        StorageManager.resetDefaults();
+        renderPokemonSelection();
+        updateUnlockProgressBar();
+        alert("Progresso restaurado aos padrões iniciais com sucesso!");
+        closeSettingsModal();
+      }
+    });
+  }
+
+  // Modal de Desafios Diários (Requisito 8)
+  if (DOM.btnOpenQuests) DOM.btnOpenQuests.addEventListener("click", openQuestsModal);
+  if (DOM.btnCloseQuests) DOM.btnCloseQuests.addEventListener("click", closeQuestsModal);
+
+  // Modal de Desbloqueio de Pokémon (Requisito 9)
+  if (DOM.btnCloseUnlock) DOM.btnCloseUnlock.addEventListener("click", closeUnlockCelebrationModal);
+
+  // Filtros de Tipo na Seleção de Pokémon (Requisito 11)
+  if (DOM.pokemonFiltersBar) {
+    const filterPills = DOM.pokemonFiltersBar.querySelectorAll(".filter-pill");
+    filterPills.forEach(pill => {
+      pill.addEventListener("click", () => {
+        filterPills.forEach(p => p.classList.remove("active"));
+        pill.classList.add("active");
+        currentPokemonFilter = pill.dataset.filter || "all";
+        renderPokemonSelection();
+        SoundFX.buttonClick();
+      });
+    });
+  }
+
   // Controles de Áudio e Som (Melhoria 3)
   if (DOM.btnToggleSound) DOM.btnToggleSound.addEventListener("click", () => SoundFX.toggle());
   if (DOM.btnBattleSound) DOM.btnBattleSound.addEventListener("click", () => SoundFX.toggle());

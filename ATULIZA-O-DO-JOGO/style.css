@@ -3761,4 +3761,634 @@ body {
   width: 100%;
 }
 
+/* ==========================================================================
+   25. NOVOS TIPOS DE POKÉMON E EFEITOS ELEMENTAIS (Requisitos 2 e 10)
+   ========================================================================== */
+.type-normal {
+  background: rgba(148, 163, 184, 0.15);
+  border: 1px solid #94a3b8;
+  color: #cbd5e1;
+}
+.type-dragao {
+  background: rgba(99, 102, 241, 0.2);
+  border: 1px solid #6366f1;
+  color: #a5b4fc;
+}
+.type-aco {
+  background: rgba(203, 213, 225, 0.2);
+  border: 1px solid #94a3b8;
+  color: #e2e8f0;
+}
+.type-fada {
+  background: rgba(244, 114, 182, 0.2);
+  border: 1px solid #f472b6;
+  color: #fbcfe8;
+}
+.type-sombrio {
+  background: rgba(139, 92, 246, 0.2);
+  border: 1px solid #7c3aed;
+  color: #c4b5fd;
+}
+.type-pedra {
+  background: rgba(217, 119, 6, 0.2);
+  border: 1px solid #d97706;
+  color: #fde68a;
+}
+.type-inseto {
+  background: rgba(132, 204, 22, 0.2);
+  border: 1px solid #84cc16;
+  color: #bef264;
+}
+
+/* Partículas e Impactos Elementais dos Novos Tipos */
+.hit-fx-dragao {
+  background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(99, 102, 241, 0.9) 45%, rgba(168, 85, 247, 0) 70%);
+  box-shadow: 0 0 35px #6366f1, 0 0 50px #a855f7;
+}
+.hit-fx-normal {
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.95) 0%, rgba(203, 213, 225, 0.8) 45%, rgba(148, 163, 184, 0) 70%);
+  box-shadow: 0 0 25px #cbd5e1;
+}
+.hit-fx-fada {
+  background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(244, 114, 182, 0.9) 45%, rgba(236, 72, 153, 0) 70%);
+  box-shadow: 0 0 35px #f472b6;
+}
+.hit-fx-sombrio {
+  background: radial-gradient(circle, rgba(30, 27, 75, 0.95) 0%, rgba(109, 40, 217, 0.9) 45%, rgba(76, 29, 149, 0) 70%);
+  box-shadow: 0 0 35px #7c3aed;
+}
+.hit-fx-aco {
+  background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(148, 163, 184, 0.9) 45%, rgba(100, 116, 139, 0) 70%);
+  box-shadow: 0 0 30px #e2e8f0;
+}
+.hit-fx-pedra {
+  background: radial-gradient(circle, rgba(254, 240, 138, 0.95) 0%, rgba(217, 119, 6, 0.9) 45%, rgba(180, 83, 9, 0) 70%);
+  box-shadow: 0 0 30px #d97706;
+}
+
+/* ==========================================================================
+   26. BARRA DE PROGRESSO DE VITÓRIAS & DESBLOQUEIO (Requisito 9)
+   ========================================================================== */
+.unlock-progress-container {
+  width: 100%;
+  max-width: 680px;
+  background: linear-gradient(135deg, rgba(17, 24, 39, 0.9), rgba(30, 41, 59, 0.85));
+  border: 1px solid rgba(251, 191, 36, 0.4);
+  border-radius: var(--radius-md);
+  padding: 12px 18px;
+  margin: 14px auto 8px auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 0 20px rgba(251, 191, 36, 0.15);
+  backdrop-filter: blur(10px);
+}
+
+.unlock-progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  font-family: var(--font-main);
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.unlock-progress-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.92rem;
+  color: #f1f5f9;
+}
+
+.unlock-progress-label strong {
+  color: #fbbf24;
+  font-size: 1.05rem;
+}
+
+.unlock-next-target {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  background: rgba(0, 0, 0, 0.35);
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.next-target-label {
+  color: #94a3b8;
+}
+
+.next-target-name {
+  color: #38bdf8;
+  font-weight: 700;
+}
+
+.unlock-progress-track {
+  width: 100%;
+  height: 12px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+.unlock-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #f59e0b, #eab308, #22c55e);
+  border-radius: var(--radius-full);
+  transition: width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 0 12px rgba(234, 179, 8, 0.7);
+}
+
+/* ==========================================================================
+   27. FILTROS DE TIPOS DOS POKÉMON (Requisito 11)
+   ========================================================================== */
+.pokemon-filters-bar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 12px 0 20px 0;
+  max-width: 1100px;
+}
+
+.filter-pill {
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #cbd5e1;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  font-family: var(--font-body);
+}
+
+.filter-pill:hover {
+  background: rgba(30, 41, 59, 0.9);
+  color: white;
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: translateY(-2px);
+}
+
+.filter-pill.active {
+  background: linear-gradient(135deg, rgba(2, 132, 199, 0.8), rgba(99, 102, 241, 0.8));
+  border-color: #38bdf8;
+  color: #ffffff;
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   28. CARDS BLOQUEADOS (Requisito 11)
+   ========================================================================== */
+.pokemon-card.card-locked {
+  filter: grayscale(0.85) brightness(0.65);
+  opacity: 0.75;
+  border-color: rgba(148, 163, 184, 0.3) !important;
+  cursor: pointer;
+}
+
+.pokemon-card.card-locked:hover {
+  filter: grayscale(0.6) brightness(0.85);
+  opacity: 0.9;
+  transform: translateY(-4px) scale(1.02);
+}
+
+.pokemon-card.card-locked .pokemon-card-img {
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.8)) brightness(0.3) contrast(1.4);
+}
+
+.pokemon-card.card-locked .card-actions-row .btn-choose {
+  background: rgba(51, 65, 85, 0.8);
+  border-color: rgba(100, 116, 139, 0.5);
+  color: #94a3b8;
+  cursor: not-allowed;
+}
+
+.card-lock-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.75);
+  border: 1px solid #f59e0b;
+  color: #fbbf24;
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  font-size: 0.72rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  z-index: 5;
+}
+
+/* ==========================================================================
+   29. MODAL DE DESBLOQUEIO CELEBRAÇÃO (Requisito 9)
+   ========================================================================== */
+.unlock-modal-card {
+  text-align: center;
+  border: 2px solid #fbbf24 !important;
+  box-shadow: 0 0 45px rgba(251, 191, 36, 0.5) !important;
+  animation: zoomCelebration 0.4s ease-out;
+}
+
+@keyframes zoomCelebration {
+  0% { transform: scale(0.7); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.unlock-confetti {
+  font-size: 1.8rem;
+  margin-bottom: 6px;
+  animation: pulseConfetti 1s infinite alternate;
+}
+
+@keyframes pulseConfetti {
+  0% { transform: scale(0.9); }
+  100% { transform: scale(1.1); }
+}
+
+.unlock-poke-card {
+  position: relative;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  margin: 16px auto;
+  max-width: 320px;
+  overflow: hidden;
+}
+
+.unlock-poke-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, rgba(251, 191, 36, 0.35) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: spinGlow 4s infinite linear;
+}
+
+@keyframes spinGlow {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.unlock-poke-img {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 0 20px rgba(251, 191, 36, 0.7));
+  animation: floatUnlock 2s infinite ease-in-out;
+}
+
+@keyframes floatUnlock {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.unlock-poke-name {
+  font-family: var(--font-main);
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #fef08a;
+  margin: 8px 0 4px 0;
+}
+
+.unlock-poke-desc {
+  font-size: 0.82rem;
+  color: #cbd5e1;
+  margin-top: 6px;
+  line-height: 1.4;
+}
+
+.unlock-poke-characteristic {
+  margin-top: 8px;
+  font-size: 0.78rem;
+  color: #38bdf8;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   30. MODAL DE CONFIGURAÇÕES & ACESSIBILIDADE (Requisito 5)
+   ========================================================================== */
+.settings-modal-card {
+  max-width: 520px;
+}
+
+.settings-modal-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 14px;
+}
+
+.settings-options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.setting-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(15, 23, 42, 0.6);
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  gap: 14px;
+}
+
+.setting-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-align: left;
+}
+
+.setting-text strong {
+  font-size: 0.95rem;
+  color: #f1f5f9;
+}
+
+.setting-text span {
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+.setting-toggle-btn {
+  background: rgba(30, 41, 59, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #cbd5e1;
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  min-width: 120px;
+}
+
+.setting-toggle-btn.active {
+  background: linear-gradient(135deg, #059669, #10b981);
+  border-color: #34d399;
+  color: white;
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
+}
+
+.setting-slider-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 140px;
+}
+
+.setting-slider {
+  width: 100px;
+  accent-color: #38bdf8;
+  cursor: pointer;
+}
+
+.btn-danger-reset {
+  background: rgba(220, 38, 38, 0.2);
+  border: 1px solid #ef4444;
+  color: #fca5a5;
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.btn-danger-reset:hover {
+  background: #dc2626;
+  color: white;
+  box-shadow: 0 0 15px rgba(239, 68, 68, 0.5);
+}
+
+/* ==========================================================================
+   31. MODAL DE DESAFIOS DIÁRIOS (Requisito 8)
+   ========================================================================== */
+.quests-modal-card {
+  max-width: 540px;
+}
+
+.quests-modal-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 12px;
+}
+
+.quests-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.quest-card {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  text-align: left;
+  transition: var(--transition-smooth);
+}
+
+.quest-card.completed {
+  border-color: #10b981;
+  background: rgba(16, 185, 129, 0.1);
+}
+
+.quest-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.quest-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #f1f5f9;
+}
+
+.quest-reward-tag {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #fbbf24;
+  background: rgba(245, 158, 11, 0.15);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.quest-progress-track {
+  width: 100%;
+  height: 8px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  margin-top: 6px;
+}
+
+.quest-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #38bdf8, #818cf8);
+  border-radius: var(--radius-full);
+  transition: width 0.4s ease;
+}
+
+.quest-card.completed .quest-progress-bar {
+  background: #10b981;
+}
+
+.quest-bottom-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+/* ==========================================================================
+   32. MODAL NARRATIVO DA HISTÓRIA (Requisito 6)
+   ========================================================================== */
+.story-modal-card {
+  max-width: 520px;
+  text-align: center;
+}
+
+.story-modal-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #e2e8f0;
+  margin: 16px 0;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: var(--radius-md);
+  border-left: 3px solid #38bdf8;
+  text-align: left;
+}
+
+.story-objective-box {
+  background: rgba(2, 132, 199, 0.15);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: left;
+}
+
+.story-objective-box span {
+  font-size: 0.76rem;
+  color: #94a3b8;
+}
+
+.story-objective-box strong {
+  font-size: 0.9rem;
+  color: #38bdf8;
+}
+
+/* ==========================================================================
+   33. SISTEMA DE AFINIDADE DO POKÉMON (Requisito 3)
+   ========================================================================== */
+.personality-badge-row {
+  margin: 6px 0 12px 0;
+}
+
+.personality-tag {
+  background: rgba(99, 102, 241, 0.2);
+  border: 1px solid #818cf8;
+  color: #c7d2fe;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.affinity-box {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  margin-bottom: 14px;
+  text-align: left;
+}
+
+.affinity-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.84rem;
+  color: #cbd5e1;
+  margin-bottom: 8px;
+}
+
+.affinity-badge {
+  background: linear-gradient(90deg, #f59e0b, #ef4444);
+  color: white;
+  padding: 2px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+}
+
+.affinity-stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+.aff-stat-col {
+  background: rgba(0, 0, 0, 0.25);
+  padding: 4px 6px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.aff-stat-col strong {
+  color: #f1f5f9;
+  font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   34. BANNER DE MOMENTO DE VIRADA (Requisito 7)
+   ========================================================================== */
+.turning-moment-alert {
+  background: linear-gradient(90deg, rgba(239, 68, 68, 0.9), rgba(245, 158, 11, 0.9)) !important;
+  border-color: #fbbf24 !important;
+  color: white !important;
+  box-shadow: 0 0 30px rgba(239, 68, 68, 0.7) !important;
+  animation: turningPulse 0.5s infinite alternate;
+}
+
+@keyframes turningPulse {
+  0% { transform: scale(0.98); }
+  100% { transform: scale(1.02); }
+}
+
+
 
