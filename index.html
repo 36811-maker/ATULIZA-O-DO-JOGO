@@ -29,7 +29,7 @@
           Escolha seu Pokémon, selecione o modo de jogo e domine as novas mecânicas de combate: Arenas com efeitos, Sistema de Energia, Combos, Esquiva ativa e Chefes lendários!
         </p>
 
-        <!-- Controles de Áudio e Som -->
+        <!-- Controles de Áudio, Ajustes e Desafios -->
         <div class="audio-controls-bar">
           <button id="btn-toggle-sound" class="btn-audio-toggle active" title="Ativar/Desativar Efeitos Sonoros">
             <span id="sound-icon">🔊</span> <span id="sound-text">Sons: ON</span>
@@ -37,6 +37,30 @@
           <button id="btn-toggle-music" class="btn-audio-toggle" title="Ativar/Desativar Música de Fundo">
             <span id="music-icon">🎵</span> <span id="music-text">Música: OFF</span>
           </button>
+          <button id="btn-open-settings" class="btn-audio-toggle" title="Configurações e Acessibilidade">
+            <span>⚙️</span> <span>Configurações</span>
+          </button>
+          <button id="btn-open-quests" class="btn-audio-toggle" title="Desafios Diários Locais">
+            <span>📅</span> <span>Desafios Diários</span>
+          </button>
+        </div>
+
+        <!-- Barra de Progresso de Vitórias para Desbloqueio de Pokémon (Requisito 9) -->
+        <div id="unlock-progress-container" class="unlock-progress-container">
+          <div class="unlock-progress-header">
+            <div class="unlock-progress-label">
+              <span class="unlock-icon">🏆</span>
+              <span id="unlock-progress-title">Vitórias para próximo Pokémon:</span>
+              <strong id="unlock-progress-text">0 / 5</strong>
+            </div>
+            <div class="unlock-next-target" id="unlock-next-target">
+              <span class="next-target-label">Próximo a desbloquear:</span>
+              <span id="unlock-target-name" class="next-target-name">Eevee</span>
+            </div>
+          </div>
+          <div class="unlock-progress-track">
+            <div id="unlock-progress-bar" class="unlock-progress-fill" style="width: 0%;"></div>
+          </div>
         </div>
 
         <!-- Seletor de Modo de Jogo -->
@@ -101,7 +125,22 @@
 
       <div class="selection-heading">
         <h2 id="selection-heading-title">Escolha seu Pokémon</h2>
-        <span class="selection-counter" id="selection-counter">8 Lutadores Disponíveis</span>
+        <span class="selection-counter" id="selection-counter">28 Lutadores Disponíveis</span>
+      </div>
+
+      <!-- Barra de Filtros de Tipos (28 Pokémon) -->
+      <div class="pokemon-filters-bar" id="pokemon-filters-bar">
+        <button class="filter-pill active" data-filter="all">🌟 Todos (28)</button>
+        <button class="filter-pill" data-filter="unlocked">🔓 Desbloqueados</button>
+        <button class="filter-pill" data-filter="Fogo">🔥 Fogo</button>
+        <button class="filter-pill" data-filter="Água">💧 Água</button>
+        <button class="filter-pill" data-filter="Elétrico">⚡ Elétrico</button>
+        <button class="filter-pill" data-filter="Planta">🌿 Planta</button>
+        <button class="filter-pill" data-filter="Psíquico">🔮 Psíquico</button>
+        <button class="filter-pill" data-filter="Dragão">🐉 Dragão</button>
+        <button class="filter-pill" data-filter="Normal">⭐ Normal</button>
+        <button class="filter-pill" data-filter="Lutador">🥊 Lutador</button>
+        <button class="filter-pill" data-filter="Fantasma">👻 Fantasma</button>
       </div>
 
       <!-- Grid com os cards dos Pokémon -->
@@ -205,6 +244,12 @@
       <div id="critical-alert" class="critical-alert hidden">
         <span class="alert-icon">⚠️</span>
         <span class="alert-msg">Cuidado! Seu Pokémon está com pouca vida!</span>
+      </div>
+
+      <!-- Alerta de Momento de Virada / Batalha Decisiva (Requisito 7) -->
+      <div id="turning-moment-alert" class="phase-alert turning-moment-alert hidden">
+        <span class="phase-alert-icon">⚡</span>
+        <span id="turning-moment-msg" class="phase-alert-msg">MOMENTO DECISIVO! A BATALHA ESTÁ NO LIMITE!</span>
       </div>
 
       <!-- Campo de Batalha (Lutador vs Lutador) -->
@@ -675,6 +720,24 @@
           <h2 id="info-modal-name" class="modal-title"></h2>
           <p id="info-modal-desc" class="modal-description"></p>
 
+          <div class="personality-badge-row">
+            <span class="personality-tag" id="info-personality-tag">🎭 Personalidade: Confiante</span>
+          </div>
+
+          <!-- Sistema de Afinidade do Pokémon (Requisito 3) -->
+          <div class="affinity-box" id="affinity-box">
+            <div class="affinity-header">
+              <span>🤝 Nível de Afinidade:</span>
+              <strong id="info-affinity-title" class="affinity-badge">Parceiro de Batalha</strong>
+            </div>
+            <div class="affinity-stats-row">
+              <div class="aff-stat-col"><span>Batalhas:</span> <strong id="info-affinity-battles">0</strong></div>
+              <div class="aff-stat-col"><span>Vitórias:</span> <strong id="info-affinity-wins">0</strong></div>
+              <div class="aff-stat-col"><span>Dano:</span> <strong id="info-affinity-damage">0</strong></div>
+              <div class="aff-stat-col"><span>Críticos:</span> <strong id="info-affinity-crits">0</strong></div>
+            </div>
+          </div>
+
           <div class="info-details-grid">
             <div class="info-detail-item">
               <span class="info-detail-label">Estilo de Batalha:</span>
@@ -722,6 +785,130 @@
             ⚡ Escolher Este Pokémon
           </button>
         </div>
+      </div>
+    </div>
+
+    <!-- ==================== MODAL DE DESBLOQUEIO DE POKÉMON (Requisito 9) ==================== -->
+    <div id="unlock-modal" class="modal-overlay hidden" style="display: none;">
+      <div class="modal-card unlock-modal-card">
+        <div class="unlock-confetti">✨ 🎉 ✨</div>
+        <div class="modal-icon unlock-badge-pulse">⭐</div>
+        <h2 class="modal-title">NOVO POKÉMON DESBLOQUEADO!</h2>
+        <p class="modal-description">Você alcançou 5 vitórias e liberou um novo parceiro para o seu time!</p>
+        
+        <div class="unlock-poke-card">
+          <div class="unlock-poke-glow"></div>
+          <img id="unlock-poke-img" class="unlock-poke-img" src="" alt="Pokémon Desbloqueado">
+          <h3 id="unlock-poke-name" class="unlock-poke-name">Eevee</h3>
+          <span id="unlock-poke-type" class="type-badge">Tipo</span>
+          <p id="unlock-poke-desc" class="unlock-poke-desc"></p>
+          <div class="unlock-poke-characteristic" id="unlock-poke-characteristic"></div>
+        </div>
+        
+        <button id="btn-close-unlock" class="btn-restart" style="margin-top: 16px;">
+          🎉 Continuar Jogando!
+        </button>
+      </div>
+    </div>
+
+    <!-- ==================== MODAL DE CONFIGURAÇÕES E ACESSIBILIDADE (Requisito 5) ==================== -->
+    <div id="settings-modal" class="modal-overlay hidden" style="display: none;">
+      <div class="modal-card settings-modal-card">
+        <div class="settings-modal-header">
+          <div class="modal-icon">⚙️</div>
+          <div>
+            <h2 class="modal-title">Configurações & Acessibilidade</h2>
+            <p class="modal-description">Personalize o som, velocidade e efeitos visuais do jogo.</p>
+          </div>
+          <button id="btn-close-settings" class="btn-close-modal" title="Fechar">✕</button>
+        </div>
+
+        <div class="settings-options-list">
+          <div class="setting-item">
+            <div class="setting-text">
+              <strong>🎵 Música de Fundo</strong>
+              <span>Ativa ou desativa a trilha retrô sintetizada</span>
+            </div>
+            <button id="btn-setting-music" class="setting-toggle-btn">Música: OFF</button>
+          </div>
+
+          <div class="setting-item">
+            <div class="setting-text">
+              <strong>🔊 Efeitos Sonoros</strong>
+              <span>Sons de ataques, golpes, cura e reações</span>
+            </div>
+            <button id="btn-setting-sound" class="setting-toggle-btn active">Sons: ON</button>
+          </div>
+
+          <div class="setting-item">
+            <div class="setting-text">
+              <strong>🎚️ Volume Principal</strong>
+              <span>Ajusta o nível geral do Web Audio</span>
+            </div>
+            <div class="setting-slider-box">
+              <input type="range" id="setting-volume-slider" min="0" max="100" value="80" class="setting-slider">
+              <span id="setting-volume-val">80%</span>
+            </div>
+          </div>
+
+          <div class="setting-item">
+            <div class="setting-text">
+              <strong>✨ Reduzir Efeitos Visuais</strong>
+              <span>Otimiza partículas e animações para acessibilidade</span>
+            </div>
+            <button id="btn-setting-motion" class="setting-toggle-btn">Efeitos: Normais</button>
+          </div>
+
+          <div class="setting-item">
+            <div class="setting-text">
+              <strong>⚡ Velocidade das Batalhas</strong>
+              <span>Diminui as pausas entre ações dos turnos</span>
+            </div>
+            <button id="btn-setting-speed" class="setting-toggle-btn">Velocidade: Normal</button>
+          </div>
+
+          <div class="setting-item reset-item">
+            <div class="setting-text">
+              <strong>🗑️ Resetar Progresso Salvo</strong>
+              <span>Reinicia vitórias, desbloqueios e histórico</span>
+            </div>
+            <button id="btn-setting-reset" class="btn-danger-reset">Resetar Progresso</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== MODAL DE DESAFIOS DIÁRIOS (Requisito 8) ==================== -->
+    <div id="quests-modal" class="modal-overlay hidden" style="display: none;">
+      <div class="modal-card quests-modal-card">
+        <div class="quests-modal-header">
+          <div class="modal-icon">📅</div>
+          <div>
+            <h2 class="modal-title">Desafios Diários Locais</h2>
+            <p class="modal-description" id="quests-date-subtitle">Missões renovadas a cada dia para testar suas habilidades!</p>
+          </div>
+          <button id="btn-close-quests" class="btn-close-modal" title="Fechar">✕</button>
+        </div>
+
+        <div class="quests-list" id="quests-list">
+          <!-- Injetado dinamicamente pelo JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== MODAL DE TRANSIÇÃO NARRATIVA DA AVENTURA (Requisito 6) ==================== -->
+    <div id="story-modal" class="modal-overlay hidden" style="display: none;">
+      <div class="modal-card story-modal-card">
+        <div id="story-modal-icon" class="modal-icon">📜</div>
+        <h2 id="story-modal-title" class="modal-title">Capítulo da Aventura</h2>
+        <p id="story-modal-text" class="story-modal-text"></p>
+        <div class="story-objective-box">
+          <span>🎯 Próximo Objetivo:</span>
+          <strong id="story-modal-objective">Explore o território e avance para a vitória!</strong>
+        </div>
+        <button id="btn-continue-story" class="btn-restart" style="margin-top: 18px;">
+          Continuar Jornada →
+        </button>
       </div>
     </div>
 
